@@ -15,6 +15,22 @@ namespace Student2
         public Login()
         {
             InitializeComponent();
+            bool GMHcheck = false;
+            bool MHcheck = false;
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            BackColor = Color.FromArgb(185, 209, 234);
+
+        }
+
+        private void visitGMHbut_Click(object sender, EventArgs e)
+        {
+            Form GenMedicalHistory = new GenMedicalHistory();
+            GenMedicalHistory.Show();
+            this.Hide();
+
         }
     }
 }

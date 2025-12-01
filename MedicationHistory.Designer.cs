@@ -33,6 +33,8 @@
             this.modifyButMH = new System.Windows.Forms.Button();
             this.addButMH = new System.Windows.Forms.Button();
             this.saveButMH = new System.Windows.Forms.Button();
+            this.visitLOGINbut = new System.Windows.Forms.Button();
+            this.visitGMHbut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // deleteButMH
@@ -80,11 +82,31 @@
             this.saveButMH.Text = "Save";
             this.saveButMH.UseVisualStyleBackColor = true;
             // 
+            // visitLOGINbut
+            // 
+            this.visitLOGINbut.Location = new System.Drawing.Point(693, 96);
+            this.visitLOGINbut.Name = "visitLOGINbut";
+            this.visitLOGINbut.Size = new System.Drawing.Size(95, 61);
+            this.visitLOGINbut.TabIndex = 14;
+            this.visitLOGINbut.Text = "Login";
+            this.visitLOGINbut.UseVisualStyleBackColor = true;
+            // 
+            // visitGMHbut
+            // 
+            this.visitGMHbut.Location = new System.Drawing.Point(693, 163);
+            this.visitGMHbut.Name = "visitGMHbut";
+            this.visitGMHbut.Size = new System.Drawing.Size(95, 61);
+            this.visitGMHbut.TabIndex = 15;
+            this.visitGMHbut.Text = "General Medical History";
+            this.visitGMHbut.UseVisualStyleBackColor = true;
+            // 
             // MedicationHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.visitGMHbut);
+            this.Controls.Add(this.visitLOGINbut);
             this.Controls.Add(this.deleteButMH);
             this.Controls.Add(this.undoButMH);
             this.Controls.Add(this.modifyButMH);
@@ -92,6 +114,7 @@
             this.Controls.Add(this.saveButMH);
             this.Name = "MedicationHistory";
             this.Text = "MedHistory";
+            this.Load += new System.EventHandler(this.MedicationHistory_Load);
             this.ResumeLayout(false);
 
         }
@@ -103,5 +126,7 @@
         private System.Windows.Forms.Button modifyButMH;
         private System.Windows.Forms.Button addButMH;
         private System.Windows.Forms.Button saveButMH;
+        private System.Windows.Forms.Button visitLOGINbut;
+        private System.Windows.Forms.Button visitGMHbut;
     }
 }

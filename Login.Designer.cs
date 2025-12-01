@@ -38,6 +38,8 @@
             this.modifyButLogin = new System.Windows.Forms.Button();
             this.addButLogin = new System.Windows.Forms.Button();
             this.saveButLogin = new System.Windows.Forms.Button();
+            this.visitGMHbut = new System.Windows.Forms.Button();
+            this.visitMHbut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loginLabel
@@ -127,12 +129,32 @@
             this.saveButLogin.Text = "Save";
             this.saveButLogin.UseVisualStyleBackColor = true;
             // 
+            // visitGMHbut
+            // 
+            this.visitGMHbut.Location = new System.Drawing.Point(693, 110);
+            this.visitGMHbut.Name = "visitGMHbut";
+            this.visitGMHbut.Size = new System.Drawing.Size(95, 61);
+            this.visitGMHbut.TabIndex = 10;
+            this.visitGMHbut.Text = "General Medical History";
+            this.visitGMHbut.UseVisualStyleBackColor = true;
+            this.visitGMHbut.Click += new System.EventHandler(this.visitGMHbut_Click);
+            // 
+            // visitMHbut
+            // 
+            this.visitMHbut.Location = new System.Drawing.Point(693, 185);
+            this.visitMHbut.Name = "visitMHbut";
+            this.visitMHbut.Size = new System.Drawing.Size(95, 61);
+            this.visitMHbut.TabIndex = 11;
+            this.visitMHbut.Text = "Medication History";
+            this.visitMHbut.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.visitMHbut);
+            this.Controls.Add(this.visitGMHbut);
             this.Controls.Add(this.deleteButLogin);
             this.Controls.Add(this.undoButLogin);
             this.Controls.Add(this.modifyButLogin);
@@ -145,6 +167,7 @@
             this.Controls.Add(this.loginLabel);
             this.Name = "Login";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,6 +185,8 @@
         private System.Windows.Forms.Button modifyButLogin;
         private System.Windows.Forms.Button addButLogin;
         private System.Windows.Forms.Button saveButLogin;
+        private System.Windows.Forms.Button visitGMHbut;
+        private System.Windows.Forms.Button visitMHbut;
     }
 }
 
