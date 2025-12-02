@@ -12,16 +12,19 @@ namespace Student2
 {
     public partial class Login : Form
     {
+
         public Login()
         {
             InitializeComponent();
             bool GMHcheck = false;
-            bool MHcheck = false;
+            bool MHcheck = false; // Placeholders
+            this.FormClosed += (s, args) => Application.Exit(); //Close the process when form is closed
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
             BackColor = Color.FromArgb(185, 209, 234);
+            loginLabel.Text=(this.Name + "hola");
 
         }
 
@@ -31,6 +34,14 @@ namespace Student2
             GenMedicalHistory.Show();
             this.Hide();
 
+        }
+
+        private void visitMHbut_Click(object sender, EventArgs e)
+        {
+            
+            Form MedicationHistory = new MedicationHistory();
+            MedicationHistory.Show();
+            this.Hide();
         }
     }
 }

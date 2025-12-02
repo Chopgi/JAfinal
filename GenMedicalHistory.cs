@@ -15,11 +15,26 @@ namespace Student2
         public GenMedicalHistory()
         {
             InitializeComponent();
+            this.FormClosed += (s, args) => Application.Exit();
         }
 
         private void GenMedicalHistory_Load(object sender, EventArgs e)
         {
             BackColor = Color.FromArgb(185, 209, 234);
+        }
+
+        private void visitMHbut_Click(object sender, EventArgs e)
+        {
+            Form MedicationHistory = new MedicationHistory();
+            MedicationHistory.Show();
+            this.Hide();
+        }
+
+        private void visitLOGINbut_Click(object sender, EventArgs e)
+        {
+            Form Login = new Login();
+            Login.Show();
+            this.Hide();
         }
     }
 }

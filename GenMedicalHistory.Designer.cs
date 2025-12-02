@@ -39,72 +39,81 @@
             // 
             // saveButGMH
             // 
-            this.saveButGMH.Location = new System.Drawing.Point(338, 415);
+            this.saveButGMH.Location = new System.Drawing.Point(254, 337);
+            this.saveButGMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.saveButGMH.Name = "saveButGMH";
-            this.saveButGMH.Size = new System.Drawing.Size(75, 23);
+            this.saveButGMH.Size = new System.Drawing.Size(56, 19);
             this.saveButGMH.TabIndex = 0;
             this.saveButGMH.Text = "Save";
             this.saveButGMH.UseVisualStyleBackColor = true;
             // 
             // addButGMH
             // 
-            this.addButGMH.Location = new System.Drawing.Point(128, 415);
+            this.addButGMH.Location = new System.Drawing.Point(96, 337);
+            this.addButGMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addButGMH.Name = "addButGMH";
-            this.addButGMH.Size = new System.Drawing.Size(75, 23);
+            this.addButGMH.Size = new System.Drawing.Size(56, 19);
             this.addButGMH.TabIndex = 1;
             this.addButGMH.Text = "Add";
             this.addButGMH.UseVisualStyleBackColor = true;
             // 
             // undoButGMH
             // 
-            this.undoButGMH.Location = new System.Drawing.Point(443, 415);
+            this.undoButGMH.Location = new System.Drawing.Point(332, 337);
+            this.undoButGMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.undoButGMH.Name = "undoButGMH";
-            this.undoButGMH.Size = new System.Drawing.Size(75, 23);
+            this.undoButGMH.Size = new System.Drawing.Size(56, 19);
             this.undoButGMH.TabIndex = 3;
             this.undoButGMH.Text = "Undo";
             this.undoButGMH.UseVisualStyleBackColor = true;
             // 
             // modifyButGMH
             // 
-            this.modifyButGMH.Location = new System.Drawing.Point(233, 415);
+            this.modifyButGMH.Location = new System.Drawing.Point(175, 337);
+            this.modifyButGMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.modifyButGMH.Name = "modifyButGMH";
-            this.modifyButGMH.Size = new System.Drawing.Size(75, 23);
+            this.modifyButGMH.Size = new System.Drawing.Size(56, 19);
             this.modifyButGMH.TabIndex = 2;
             this.modifyButGMH.Text = "Modify";
             this.modifyButGMH.UseVisualStyleBackColor = true;
             // 
             // deleteButGMH
             // 
-            this.deleteButGMH.Location = new System.Drawing.Point(548, 415);
+            this.deleteButGMH.Location = new System.Drawing.Point(411, 337);
+            this.deleteButGMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.deleteButGMH.Name = "deleteButGMH";
-            this.deleteButGMH.Size = new System.Drawing.Size(75, 23);
+            this.deleteButGMH.Size = new System.Drawing.Size(56, 19);
             this.deleteButGMH.TabIndex = 4;
             this.deleteButGMH.Text = "Delete";
             this.deleteButGMH.UseVisualStyleBackColor = true;
             // 
             // visitMHbut
             // 
-            this.visitMHbut.Location = new System.Drawing.Point(693, 176);
+            this.visitMHbut.Location = new System.Drawing.Point(520, 143);
+            this.visitMHbut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.visitMHbut.Name = "visitMHbut";
-            this.visitMHbut.Size = new System.Drawing.Size(95, 61);
+            this.visitMHbut.Size = new System.Drawing.Size(71, 50);
             this.visitMHbut.TabIndex = 13;
             this.visitMHbut.Text = "Medication History";
             this.visitMHbut.UseVisualStyleBackColor = true;
+            this.visitMHbut.Click += new System.EventHandler(this.visitMHbut_Click);
             // 
             // visitLOGINbut
             // 
-            this.visitLOGINbut.Location = new System.Drawing.Point(693, 101);
+            this.visitLOGINbut.Location = new System.Drawing.Point(520, 82);
+            this.visitLOGINbut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.visitLOGINbut.Name = "visitLOGINbut";
-            this.visitLOGINbut.Size = new System.Drawing.Size(95, 61);
+            this.visitLOGINbut.Size = new System.Drawing.Size(71, 50);
             this.visitLOGINbut.TabIndex = 12;
             this.visitLOGINbut.Text = "Login";
             this.visitLOGINbut.UseVisualStyleBackColor = true;
+            this.visitLOGINbut.Click += new System.EventHandler(this.visitLOGINbut_Click);
             // 
             // GenMedicalHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.visitMHbut);
             this.Controls.Add(this.visitLOGINbut);
             this.Controls.Add(this.deleteButGMH);
@@ -112,6 +121,7 @@
             this.Controls.Add(this.modifyButGMH);
             this.Controls.Add(this.addButGMH);
             this.Controls.Add(this.saveButGMH);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GenMedicalHistory";
             this.Text = "GenMedicalHistory";
             this.Load += new System.EventHandler(this.GenMedicalHistory_Load);
