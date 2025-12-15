@@ -17,23 +17,24 @@ namespace Student2
         {
             InitializeComponent();
             bool GMHcheck = false;
-            bool MHcheck = false; // Placeholders
-            this.FormClosed += (s, args) => Application.Exit(); //Close the process when form is closed
-            // todo: generate patient report file upon login
-            //       Begin logging upon login
-            //       Make login button bring user to Select patient
+            bool MHcheck = false;
+            this.FormClosed += (s, args) => Application.Exit();
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
             BackColor = Color.FromArgb(185, 209, 234);
-            loginLabel.Text=(this.Name);
-
+            
+            loginBut.Cursor = Cursors.Hand;
+            usernameTB.TabIndex = 0;
+            passwordTB.TabIndex = 1;
+            loginBut.TabIndex = 2;
+            
+            this.AcceptButton = loginBut;
         }
 
         private void visitGMHbut_Click(object sender, EventArgs e)
         {
-            //left in for debugging
             Form GenMedicalHistory = new GenMedicalHistory();
             GenMedicalHistory.Show();
             this.Hide();
