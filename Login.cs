@@ -52,10 +52,5 @@ namespace Student2
         {
 
         }
-
-        private void loginLabel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
