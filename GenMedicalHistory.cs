@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,40 @@ namespace Student2
 {
     public partial class GenMedicalHistory : Form
     {
+        string currentPatIDtoPass = "-1";
         public GenMedicalHistory()
         {
             InitializeComponent();
             this.FormClosed += (s, args) => Application.Exit();
+        }
+
+        public GenMedicalHistory(Form f, string patientID)
+        {
+            InitializeComponent();
+            f.Dispose();
+            this.FormClosed += (s, args) => Application.Exit();
+            currentPatIDtoPass = patientID;
+
+            string connString = "server=localhost;uid=root;pwd=toor;database=its245";
+            using (var conn = new MySqlConnection(connString))
+            {
+                try
+                {
+                    MySqlCommand cmd = conn.CreateCommand();
+                    conn.Open();
+                    cmd.CommandText = "SELECT PtFirstName, PtLastName " + "FROM patientdemographics " + "WHERE PatientID = " + currentPatIDtoPass;
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        nameAgeLabel.Text = reader.GetString(0) + " " + reader.GetString(1);
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("DB error " + ex.Message);
+                }
+            }
         }
 
         private void GenMedicalHistory_Load(object sender, EventArgs e)
@@ -25,9 +56,8 @@ namespace Student2
 
         private void visitMHbut_Click(object sender, EventArgs e)
         {
-            Form MedicationHistory = new MedicationHistory();
+            Form MedicationHistory = new MedicationHistory(this, currentPatIDtoPass);
             MedicationHistory.Show();
-            this.Hide();
         }
 
         private void visitLOGINbut_Click(object sender, EventArgs e)
@@ -36,5 +66,12 @@ namespace Student2
             Login.Show();
             this.Hide();
         }
+
+        private void visitPDbut_Click(object sender, EventArgs e)
+        {
+            Form PatientDemographics = new PatientDemographics(this, currentPatIDtoPass);
+            PatientDemographics.Show();
+        }
+
     }
 }

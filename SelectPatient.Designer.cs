@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nameAgeLabel = new System.Windows.Forms.Label();
             this.deleteButGMH = new System.Windows.Forms.Button();
             this.undoButGMH = new System.Windows.Forms.Button();
@@ -36,16 +35,8 @@
             this.addButGMH = new System.Windows.Forms.Button();
             this.saveButGMH = new System.Windows.Forms.Button();
             this.visitPDbut = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.listBoxSP = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(78, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 285);
-            this.dataGridView1.TabIndex = 0;
             // 
             // nameAgeLabel
             // 
@@ -120,11 +111,21 @@
             this.visitPDbut.UseVisualStyleBackColor = true;
             this.visitPDbut.Click += new System.EventHandler(this.visitPDbut_Click);
             // 
+            // listBoxSP
+            // 
+            this.listBoxSP.FormattingEnabled = true;
+            this.listBoxSP.Location = new System.Drawing.Point(84, 113);
+            this.listBoxSP.Name = "listBoxSP";
+            this.listBoxSP.Size = new System.Drawing.Size(631, 186);
+            this.listBoxSP.TabIndex = 26;
+            this.listBoxSP.SelectedIndexChanged += new System.EventHandler(this.listBoxSP_SelectedIndexChanged);
+            // 
             // SelectPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBoxSP);
             this.Controls.Add(this.visitPDbut);
             this.Controls.Add(this.deleteButGMH);
             this.Controls.Add(this.undoButGMH);
@@ -132,18 +133,15 @@
             this.Controls.Add(this.addButGMH);
             this.Controls.Add(this.saveButGMH);
             this.Controls.Add(this.nameAgeLabel);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "SelectPatient";
             this.Text = "SelectPatient";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.SelectPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label nameAgeLabel;
         private System.Windows.Forms.Button deleteButGMH;
         private System.Windows.Forms.Button undoButGMH;
@@ -151,5 +149,6 @@
         private System.Windows.Forms.Button addButGMH;
         private System.Windows.Forms.Button saveButGMH;
         private System.Windows.Forms.Button visitPDbut;
+        private System.Windows.Forms.ListBox listBoxSP;
     }
 }

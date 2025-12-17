@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,40 @@ namespace Student2
 {
     public partial class MedicationHistory : Form
     {
+        string currentPatIDtoPass = "-1";
         public MedicationHistory()
         {
             InitializeComponent();
             this.FormClosed += (s, args) => Application.Exit();
+        }
+
+        public MedicationHistory(Form f, string patientID)
+        {
+            InitializeComponent();
+            f.Dispose();
+            this.FormClosed += (s, args) => Application.Exit();
+            currentPatIDtoPass = patientID;
+
+            string connString = "server=localhost;uid=root;pwd=toor;database=its245";
+            using (var conn = new MySqlConnection(connString))
+            {
+                try
+                {
+                    MySqlCommand cmd = conn.CreateCommand();
+                    conn.Open();
+                    cmd.CommandText = "SELECT PtFirstName, PtLastName " + "FROM patientdemographics " + "WHERE PatientID = " + currentPatIDtoPass;
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        nameAgeLabel.Text = reader.GetString(0) + " " + reader.GetString(1);
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("DB error " + ex.Message);
+                }
+            }
         }
 
         private void MedicationHistory_Load(object sender, EventArgs e)
@@ -25,16 +56,15 @@ namespace Student2
 
         private void visitGMHbut_Click(object sender, EventArgs e)
         {
-            Form GenMedicalHistory = new GenMedicalHistory();
+            Form GenMedicalHistory = new GenMedicalHistory(this, currentPatIDtoPass);
             GenMedicalHistory.Show();
-            this.Hide();
         }
 
-        private void visitLOGINbut_Click(object sender, EventArgs e)
+
+        private void visitPDbut_Click(object sender, EventArgs e)
         {
-            Form Login = new Login();
-            Login.Show();
-            this.Hide();
+            Form PatientDemographics = new PatientDemographics(this, currentPatIDtoPass);
+            PatientDemographics.Show();
         }
     }
 }
