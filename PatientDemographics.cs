@@ -63,6 +63,23 @@ namespace Student2
         private void PatientDemographics_Load(object sender, EventArgs e)
         {
             BackColor = Color.FromArgb(185, 209, 234);
+            string connString = "server=localhost;uid=root;pwd=toor;database=its245";
+            using (var conn = new MySqlConnection(connString))
+            {
+                try
+                {
+                    MySqlCommand cmd = conn.CreateCommand();
+                    conn.Open();
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM patientdemographics WHERE PatientID = "+ currentPatIDtoPass, conn);
+                    da.Fill(dt);
+                    dataGridViewPD.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("DB error " + ex.Message);
+                }
+            }
         }
     }
 }

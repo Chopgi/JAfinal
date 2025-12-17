@@ -43,7 +43,7 @@
             // deleteButMH
             // 
             this.deleteButMH.Location = new System.Drawing.Point(430, 337);
-            this.deleteButMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteButMH.Margin = new System.Windows.Forms.Padding(2);
             this.deleteButMH.Name = "deleteButMH";
             this.deleteButMH.Size = new System.Drawing.Size(56, 19);
             this.deleteButMH.TabIndex = 9;
@@ -53,7 +53,7 @@
             // undoButMH
             // 
             this.undoButMH.Location = new System.Drawing.Point(351, 337);
-            this.undoButMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.undoButMH.Margin = new System.Windows.Forms.Padding(2);
             this.undoButMH.Name = "undoButMH";
             this.undoButMH.Size = new System.Drawing.Size(56, 19);
             this.undoButMH.TabIndex = 8;
@@ -63,7 +63,7 @@
             // modifyButMH
             // 
             this.modifyButMH.Location = new System.Drawing.Point(194, 337);
-            this.modifyButMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modifyButMH.Margin = new System.Windows.Forms.Padding(2);
             this.modifyButMH.Name = "modifyButMH";
             this.modifyButMH.Size = new System.Drawing.Size(56, 19);
             this.modifyButMH.TabIndex = 7;
@@ -73,7 +73,7 @@
             // addButMH
             // 
             this.addButMH.Location = new System.Drawing.Point(114, 337);
-            this.addButMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addButMH.Margin = new System.Windows.Forms.Padding(2);
             this.addButMH.Name = "addButMH";
             this.addButMH.Size = new System.Drawing.Size(56, 19);
             this.addButMH.TabIndex = 6;
@@ -83,7 +83,7 @@
             // saveButMH
             // 
             this.saveButMH.Location = new System.Drawing.Point(272, 337);
-            this.saveButMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveButMH.Margin = new System.Windows.Forms.Padding(2);
             this.saveButMH.Name = "saveButMH";
             this.saveButMH.Size = new System.Drawing.Size(56, 19);
             this.saveButMH.TabIndex = 5;
@@ -93,7 +93,7 @@
             // visitGMHbut
             // 
             this.visitGMHbut.Location = new System.Drawing.Point(520, 185);
-            this.visitGMHbut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.visitGMHbut.Margin = new System.Windows.Forms.Padding(2);
             this.visitGMHbut.Name = "visitGMHbut";
             this.visitGMHbut.Size = new System.Drawing.Size(71, 50);
             this.visitGMHbut.TabIndex = 15;
@@ -115,9 +115,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(88, 91);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(398, 139);
             this.dataGridView1.TabIndex = 17;
             // 
@@ -146,7 +148,7 @@
             this.Controls.Add(this.modifyButMH);
             this.Controls.Add(this.addButMH);
             this.Controls.Add(this.saveButMH);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MedicationHistory";
             this.Text = "MedHistory";
             this.Load += new System.EventHandler(this.MedicationHistory_Load);

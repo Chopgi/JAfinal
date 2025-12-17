@@ -43,7 +43,7 @@
             // saveButGMH
             // 
             this.saveButGMH.Location = new System.Drawing.Point(273, 337);
-            this.saveButGMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveButGMH.Margin = new System.Windows.Forms.Padding(2);
             this.saveButGMH.Name = "saveButGMH";
             this.saveButGMH.Size = new System.Drawing.Size(56, 19);
             this.saveButGMH.TabIndex = 0;
@@ -53,7 +53,7 @@
             // addButGMH
             // 
             this.addButGMH.Location = new System.Drawing.Point(115, 337);
-            this.addButGMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addButGMH.Margin = new System.Windows.Forms.Padding(2);
             this.addButGMH.Name = "addButGMH";
             this.addButGMH.Size = new System.Drawing.Size(56, 19);
             this.addButGMH.TabIndex = 1;
@@ -63,7 +63,7 @@
             // undoButGMH
             // 
             this.undoButGMH.Location = new System.Drawing.Point(351, 337);
-            this.undoButGMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.undoButGMH.Margin = new System.Windows.Forms.Padding(2);
             this.undoButGMH.Name = "undoButGMH";
             this.undoButGMH.Size = new System.Drawing.Size(56, 19);
             this.undoButGMH.TabIndex = 3;
@@ -73,7 +73,7 @@
             // modifyButGMH
             // 
             this.modifyButGMH.Location = new System.Drawing.Point(194, 337);
-            this.modifyButGMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modifyButGMH.Margin = new System.Windows.Forms.Padding(2);
             this.modifyButGMH.Name = "modifyButGMH";
             this.modifyButGMH.Size = new System.Drawing.Size(56, 19);
             this.modifyButGMH.TabIndex = 2;
@@ -83,7 +83,7 @@
             // deleteButGMH
             // 
             this.deleteButGMH.Location = new System.Drawing.Point(430, 337);
-            this.deleteButGMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteButGMH.Margin = new System.Windows.Forms.Padding(2);
             this.deleteButGMH.Name = "deleteButGMH";
             this.deleteButGMH.Size = new System.Drawing.Size(56, 19);
             this.deleteButGMH.TabIndex = 4;
@@ -93,7 +93,7 @@
             // visitMHbut
             // 
             this.visitMHbut.Location = new System.Drawing.Point(520, 185);
-            this.visitMHbut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.visitMHbut.Margin = new System.Windows.Forms.Padding(2);
             this.visitMHbut.Name = "visitMHbut";
             this.visitMHbut.Size = new System.Drawing.Size(71, 50);
             this.visitMHbut.TabIndex = 13;
@@ -103,10 +103,12 @@
             // 
             // dataGridViewGMH
             // 
+            this.dataGridViewGMH.AllowUserToAddRows = false;
             this.dataGridViewGMH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGMH.Location = new System.Drawing.Point(97, 82);
-            this.dataGridViewGMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewGMH.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewGMH.Name = "dataGridViewGMH";
+            this.dataGridViewGMH.RowHeadersVisible = false;
             this.dataGridViewGMH.RowHeadersWidth = 51;
             this.dataGridViewGMH.RowTemplate.Height = 24;
             this.dataGridViewGMH.Size = new System.Drawing.Size(406, 202);
@@ -149,7 +151,7 @@
             this.Controls.Add(this.modifyButGMH);
             this.Controls.Add(this.addButGMH);
             this.Controls.Add(this.saveButGMH);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GenMedicalHistory";
             this.Text = "GenMedicalHistory";
             this.Load += new System.EventHandler(this.GenMedicalHistory_Load);
