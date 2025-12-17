@@ -52,20 +52,25 @@ namespace Student2
             }
         }
 
-        private string currentPatIDtoPass = "-1"; //default if no patient is selected
+        private string currentPatIDtoPass = "-1";
 
         private void SelectPatient_Load(object sender, EventArgs e)
         {
-            BackColor = Color.FromArgb(185, 209, 234);
+            BackColor = Color.CornflowerBlue;
+            LoadPatients();
+        }
+
+        private void LoadPatients()
+        {
             string connString = "server=localhost;uid=root;pwd=toor;database=its245";
             using (var conn = new MySqlConnection(connString))
             {
                 try
                 {
                     MySqlCommand cmd = conn.CreateCommand();
-                    conn.Open(); //Opening connection to database
+                    conn.Open();
                     cmd.CommandText = "SELECT PatientID, PtFirstName, PtLastName, PtHomePhone " + "FROM patientdemographics " + "WHERE deleted NOT IN (1)";
-                    MySqlDataReader reader = cmd.ExecuteReader(); //Helps me read the command that we executed
+                    MySqlDataReader reader = cmd.ExecuteReader();
                     listBoxSP.Items.Clear();
                     while (reader.Read())
                     {
@@ -92,9 +97,9 @@ namespace Student2
         private void listBoxSP_SelectedIndexChanged(object sender, EventArgs e)
         {
             var currentPatID = listBoxSP.SelectedItem as patientItem;
+            if (currentPatID == null) return;
+            
             currentPatIDtoPass = currentPatID.PatientID.ToString();
-
-
 
             string connString = "server=localhost;uid=root;pwd=toor;database=its245";
             using (var conn = new MySqlConnection(connString))
@@ -102,9 +107,9 @@ namespace Student2
                 try
                 {
                     MySqlCommand cmd = conn.CreateCommand();
-                    conn.Open(); //Opening connection to database
+                    conn.Open();
                     cmd.CommandText = "SELECT PtFirstName, PtLastName " + "FROM patientdemographics " + "WHERE PatientID = "+ currentPatID.PatientID.ToString();
-                    MySqlDataReader reader = cmd.ExecuteReader(); //Helps me read the command that we executed
+                    MySqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
                         nameAgeLabel.Text = reader.GetString(0) + " " + reader.GetString(1);
@@ -114,6 +119,65 @@ namespace Student2
                 catch (Exception ex)
                 {
                     MessageBox.Show("DB error " + ex.Message);
+                }
+            }
+        }
+
+        private void addButGMH_Click(object sender, EventArgs e)
+        {
+            AddPatient addForm = new AddPatient();
+            addForm.ShowDialog();
+            LoadPatients();
+        }
+
+        private void modifyButGMH_Click(object sender, EventArgs e)
+        {
+            if (currentPatIDtoPass == "-1")
+            {
+                MessageBox.Show("Please select a patient first");
+                return;
+            }
+        }
+
+        private void saveButGMH_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void undoButGMH_Click(object sender, EventArgs e)
+        {
+            LoadPatients();
+        }
+
+        private void deleteButGMH_Click(object sender, EventArgs e)
+        {
+            if (currentPatIDtoPass == "-1")
+            {
+                MessageBox.Show("Please select a patient first");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this patient?", "Confirm Delete", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                string connString = "server=localhost;uid=root;pwd=toor;database=its245";
+                using (var conn = new MySqlConnection(connString))
+                {
+                    try
+                    {
+                        MySqlCommand cmd = conn.CreateCommand();
+                        conn.Open();
+                        cmd.CommandText = "UPDATE patientdemographics SET deleted = 1 WHERE PatientID = " + currentPatIDtoPass;
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Patient deleted successfully");
+                        currentPatIDtoPass = "-1";
+                        nameAgeLabel.Text = "PatientFname, Lname, Age";
+                        LoadPatients();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("DB error " + ex.Message);
+                    }
                 }
             }
         }

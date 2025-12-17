@@ -41,7 +41,7 @@
             // nameAgeLabel
             // 
             this.nameAgeLabel.AutoSize = true;
-            this.nameAgeLabel.BackColor = System.Drawing.Color.Gold;
+            this.nameAgeLabel.BackColor = System.Drawing.Color.Yellow;
             this.nameAgeLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameAgeLabel.Location = new System.Drawing.Point(9, 7);
             this.nameAgeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -59,6 +59,7 @@
             this.deleteButGMH.TabIndex = 24;
             this.deleteButGMH.Text = "Delete";
             this.deleteButGMH.UseVisualStyleBackColor = true;
+            this.deleteButGMH.Click += new System.EventHandler(this.deleteButGMH_Click);
             // 
             // undoButGMH
             // 
@@ -69,6 +70,7 @@
             this.undoButGMH.TabIndex = 23;
             this.undoButGMH.Text = "Undo";
             this.undoButGMH.UseVisualStyleBackColor = true;
+            this.undoButGMH.Click += new System.EventHandler(this.undoButGMH_Click);
             // 
             // modifyButGMH
             // 
@@ -79,6 +81,7 @@
             this.modifyButGMH.TabIndex = 22;
             this.modifyButGMH.Text = "Modify";
             this.modifyButGMH.UseVisualStyleBackColor = true;
+            this.modifyButGMH.Click += new System.EventHandler(this.modifyButGMH_Click);
             // 
             // addButGMH
             // 
@@ -89,6 +92,7 @@
             this.addButGMH.TabIndex = 21;
             this.addButGMH.Text = "Add";
             this.addButGMH.UseVisualStyleBackColor = true;
+            this.addButGMH.Click += new System.EventHandler(this.addButGMH_Click);
             // 
             // saveButGMH
             // 
@@ -99,6 +103,7 @@
             this.saveButGMH.TabIndex = 20;
             this.saveButGMH.Text = "Save";
             this.saveButGMH.UseVisualStyleBackColor = true;
+            this.saveButGMH.Click += new System.EventHandler(this.saveButGMH_Click);
             // 
             // visitPDbut
             // 
@@ -124,6 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.listBoxSP);
             this.Controls.Add(this.visitPDbut);
