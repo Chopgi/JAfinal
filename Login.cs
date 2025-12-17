@@ -56,7 +56,9 @@ namespace Student2
 
         private void loginLabel_Click(object sender, EventArgs e)
         {
-
+            Form SelectPatient = new SelectPatient();
+            SelectPatient.Show();
+            this.Hide();
         }
     }
 }
