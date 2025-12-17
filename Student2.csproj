@@ -95,11 +95,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddImmunization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddImmunization.Designer.cs">
+      <DependentUpon>AddImmunization.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenMedicalHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GenMedicalHistory.Designer.cs">
       <DependentUpon>GenMedicalHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImmunizationHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImmunizationHistory.Designer.cs">
+      <DependentUpon>ImmunizationHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
