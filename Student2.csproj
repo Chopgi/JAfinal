@@ -95,7 +95,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="AddImmunization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,13 +107,17 @@
     <Compile Include="AddPatient.Designer.cs">
       <DependentUpon>AddPatient.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> parent of 9bdce5f (Added new Forms and returned all forms)
     <Compile Include="GenMedicalHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GenMedicalHistory.Designer.cs">
       <DependentUpon>GenMedicalHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImmunizationHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImmunizationHistory.Designer.cs">
+      <DependentUpon>ImmunizationHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>

@@ -117,12 +117,11 @@
             // nameAgeLabel
             // 
             this.nameAgeLabel.AutoSize = true;
-            this.nameAgeLabel.BackColor = System.Drawing.Color.Gold;
-            this.nameAgeLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameAgeLabel.BackColor = System.Drawing.Color.Yellow;
             this.nameAgeLabel.Location = new System.Drawing.Point(9, 7);
             this.nameAgeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameAgeLabel.Name = "nameAgeLabel";
-            this.nameAgeLabel.Size = new System.Drawing.Size(289, 29);
+            this.nameAgeLabel.Size = new System.Drawing.Size(150, 13);
             this.nameAgeLabel.TabIndex = 18;
             this.nameAgeLabel.Text = "PatientFname, Lname, Age";
             // 
@@ -141,6 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.visitPDbut);
             this.Controls.Add(this.nameAgeLabel);
