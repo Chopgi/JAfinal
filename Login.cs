@@ -51,14 +51,14 @@ namespace Student2
 
         private void loginBut_Click(object sender, EventArgs e)
         {
-            Form SelectPatient = new SelectPatient();
-            SelectPatient.Show();
-            this.Hide();
+
         }
 
         private void loginLabel_Click(object sender, EventArgs e)
         {
-            
+            Form SelectPatient = new SelectPatient();
+            SelectPatient.Show();
+            this.Hide();
         }
     }
 }
