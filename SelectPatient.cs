@@ -117,5 +117,11 @@ namespace Student2
                 }
             }
         }
+
+        private void addButGMH_Click(object sender, EventArgs e)
+        {
+            Form AddPatient = new AddPatient();
+            AddPatient.Show();
+        }
     }
 }

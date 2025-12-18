@@ -38,6 +38,7 @@
             this.saveButGMH = new System.Windows.Forms.Button();
             this.visitGMHbut = new System.Windows.Forms.Button();
             this.selectPatientCB = new System.Windows.Forms.ComboBox();
+            this.visitIHbut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             // 
             // visitMHbut
             // 
-            this.visitMHbut.Location = new System.Drawing.Point(718, 167);
+            this.visitMHbut.Location = new System.Drawing.Point(718, 146);
             this.visitMHbut.Margin = new System.Windows.Forms.Padding(2);
             this.visitMHbut.Name = "visitMHbut";
             this.visitMHbut.Size = new System.Drawing.Size(71, 50);
@@ -130,7 +131,7 @@
             // 
             // visitGMHbut
             // 
-            this.visitGMHbut.Location = new System.Drawing.Point(718, 234);
+            this.visitGMHbut.Location = new System.Drawing.Point(718, 200);
             this.visitGMHbut.Margin = new System.Windows.Forms.Padding(2);
             this.visitGMHbut.Name = "visitGMHbut";
             this.visitGMHbut.Size = new System.Drawing.Size(71, 50);
@@ -148,11 +149,23 @@
             this.selectPatientCB.TabIndex = 28;
             this.selectPatientCB.Text = "--Select Patient --";
             // 
+            // visitIHbut
+            // 
+            this.visitIHbut.Location = new System.Drawing.Point(718, 254);
+            this.visitIHbut.Margin = new System.Windows.Forms.Padding(2);
+            this.visitIHbut.Name = "visitIHbut";
+            this.visitIHbut.Size = new System.Drawing.Size(71, 50);
+            this.visitIHbut.TabIndex = 29;
+            this.visitIHbut.Text = "Immunization History";
+            this.visitIHbut.UseVisualStyleBackColor = true;
+            this.visitIHbut.Click += new System.EventHandler(this.visitIHbut_Click);
+            // 
             // PatientDemographics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.visitIHbut);
             this.Controls.Add(this.selectPatientCB);
             this.Controls.Add(this.visitGMHbut);
             this.Controls.Add(this.nameAgeLabel);
@@ -184,5 +197,6 @@
         private System.Windows.Forms.Button saveButGMH;
         private System.Windows.Forms.Button visitGMHbut;
         private System.Windows.Forms.ComboBox selectPatientCB;
+        private System.Windows.Forms.Button visitIHbut;
     }
 }

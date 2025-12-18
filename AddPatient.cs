@@ -21,5 +21,10 @@ namespace Student2
         {
             BackColor = Color.FromArgb(185, 209, 234);
         }
+
+        private void cancelBut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

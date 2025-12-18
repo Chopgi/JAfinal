@@ -60,7 +60,7 @@ namespace Student2
                     MySqlCommand cmd = conn.CreateCommand();
                     conn.Open();
                     DataTable dt = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM patientdemographics WHERE PatientID = " + currentPatIDtoPass, conn);
+                    MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM generalmedicalhistory WHERE PatientID = " + currentPatIDtoPass, conn);
                     da.Fill(dt);
                     dataGridViewGMH.DataSource = dt;
                 }
@@ -90,5 +90,10 @@ namespace Student2
             PatientDemographics.Show();
         }
 
+        private void visitIHbut_Click(object sender, EventArgs e)
+        {
+            Form ImmunizationHistory = new ImmunizationHistory(this, currentPatIDtoPass);
+            ImmunizationHistory.Show();
+        }
     }
 }

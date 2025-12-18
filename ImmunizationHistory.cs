@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace Student2
 {
-    public partial class PatientDemographics : Form
+    public partial class ImmunizationHistory : Form
     {
         string currentPatIDtoPass = "-1";
-        public PatientDemographics()
+        public ImmunizationHistory()
         {
             InitializeComponent();
             this.FormClosed += (s, args) => Application.Exit();
         }
 
-        public PatientDemographics(Form f, string patientID)
+        public ImmunizationHistory(Form f, string patientID)
         {
             InitializeComponent();
             f.Dispose();
@@ -35,7 +35,7 @@ namespace Student2
                     MySqlCommand cmd = conn.CreateCommand();
                     conn.Open();
                     cmd.CommandText = "SELECT PtFirstName, PtLastName " + "FROM patientdemographics " + "WHERE PatientID = " + currentPatIDtoPass;
-                    MySqlDataReader reader = cmd.ExecuteReader(); 
+                    MySqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
                         nameAgeLabel.Text = reader.GetString(0) + " " + reader.GetString(1);
@@ -48,10 +48,11 @@ namespace Student2
                 }
             }
         }
-        private void visitMHbut_Click(object sender, EventArgs e)
+
+        private void visitPDbut_Click(object sender, EventArgs e)
         {
-            Form MedicationHistory = new MedicationHistory(this, currentPatIDtoPass);
-            MedicationHistory.Show();
+            Form PatientDemographics = new PatientDemographics(this, currentPatIDtoPass);
+            PatientDemographics.Show();
         }
 
         private void visitGMHbut_Click(object sender, EventArgs e)
@@ -60,7 +61,13 @@ namespace Student2
             GenMedicalHistory.Show();
         }
 
-        private void PatientDemographics_Load(object sender, EventArgs e)
+        private void visitMHbut_Click(object sender, EventArgs e)
+        {
+            Form MedicationHistory = new MedicationHistory(this, currentPatIDtoPass);
+            MedicationHistory.Show();
+        }
+
+        private void ImmunizationHistory_Load(object sender, EventArgs e)
         {
             BackColor = Color.FromArgb(185, 209, 234);
             string connString = "server=localhost;uid=root;pwd=toor;database=its245";
@@ -71,21 +78,15 @@ namespace Student2
                     MySqlCommand cmd = conn.CreateCommand();
                     conn.Open();
                     DataTable dt = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM patientdemographics WHERE PatientID = "+ currentPatIDtoPass, conn);
+                    MySqlDataAdapter da = new MySqlDataAdapter("SELECT Vaccine, ImmunizationDate, ExperationDate AS 'EXP Date', Delivery, Comments, HCPId FROM immunizationshistorytable WHERE PatientID = " + currentPatIDtoPass, conn);
                     da.Fill(dt);
-                    dataGridViewPD.DataSource = dt;
+                    dataGridView1.DataSource = dt;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("DB error " + ex.Message);
                 }
             }
-        }
-
-        private void visitIHbut_Click(object sender, EventArgs e)
-        {
-            Form ImmunizationHistory = new ImmunizationHistory(this, currentPatIDtoPass);
-            ImmunizationHistory.Show();
         }
     }
 }

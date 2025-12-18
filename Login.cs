@@ -33,28 +33,7 @@ namespace Student2
             this.AcceptButton = loginBut;
         }
 
-        private void visitGMHbut_Click(object sender, EventArgs e)
-        {
-            Form GenMedicalHistory = new GenMedicalHistory();
-            GenMedicalHistory.Show();
-            this.Hide();
-
-        }
-
-        private void visitMHbut_Click(object sender, EventArgs e)
-        {
-            
-            Form MedicationHistory = new MedicationHistory();
-            MedicationHistory.Show();
-            this.Hide();
-        }
-
         private void loginBut_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loginLabel_Click(object sender, EventArgs e)
         {
             Form SelectPatient = new SelectPatient();
             SelectPatient.Show();

@@ -37,6 +37,7 @@
             this.nameAgeLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.visitPDbut = new System.Windows.Forms.Button();
+            this.visitIHbut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +93,7 @@
             // 
             // visitGMHbut
             // 
-            this.visitGMHbut.Location = new System.Drawing.Point(520, 185);
+            this.visitGMHbut.Location = new System.Drawing.Point(520, 158);
             this.visitGMHbut.Margin = new System.Windows.Forms.Padding(2);
             this.visitGMHbut.Name = "visitGMHbut";
             this.visitGMHbut.Size = new System.Drawing.Size(71, 50);
@@ -125,7 +126,7 @@
             // 
             // visitPDbut
             // 
-            this.visitPDbut.Location = new System.Drawing.Point(520, 131);
+            this.visitPDbut.Location = new System.Drawing.Point(520, 104);
             this.visitPDbut.Margin = new System.Windows.Forms.Padding(2);
             this.visitPDbut.Name = "visitPDbut";
             this.visitPDbut.Size = new System.Drawing.Size(71, 50);
@@ -134,11 +135,23 @@
             this.visitPDbut.UseVisualStyleBackColor = true;
             this.visitPDbut.Click += new System.EventHandler(this.visitPDbut_Click);
             // 
+            // visitIHbut
+            // 
+            this.visitIHbut.Location = new System.Drawing.Point(520, 212);
+            this.visitIHbut.Margin = new System.Windows.Forms.Padding(2);
+            this.visitIHbut.Name = "visitIHbut";
+            this.visitIHbut.Size = new System.Drawing.Size(71, 50);
+            this.visitIHbut.TabIndex = 21;
+            this.visitIHbut.Text = "Immunization History";
+            this.visitIHbut.UseVisualStyleBackColor = true;
+            this.visitIHbut.Click += new System.EventHandler(this.visitIHbut_Click);
+            // 
             // MedicationHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.visitIHbut);
             this.Controls.Add(this.visitPDbut);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.nameAgeLabel);
@@ -169,5 +182,6 @@
         private System.Windows.Forms.Label nameAgeLabel;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button visitPDbut;
+        private System.Windows.Forms.Button visitIHbut;
     }
 }
