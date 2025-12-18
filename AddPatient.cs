@@ -16,5 +16,10 @@ namespace Student2
         {
             InitializeComponent();
         }
+
+        private void AddPatient_Load(object sender, EventArgs e)
+        {
+            BackColor = Color.FromArgb(185, 209, 234);
+        }
     }
 }

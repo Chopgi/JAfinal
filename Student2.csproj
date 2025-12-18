@@ -133,6 +133,9 @@
     <Compile Include="SelectPatient.Designer.cs">
       <DependentUpon>SelectPatient.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddPatient.resx">
+      <DependentUpon>AddPatient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenMedicalHistory.resx">
       <DependentUpon>GenMedicalHistory.cs</DependentUpon>
     </EmbeddedResource>
