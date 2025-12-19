@@ -38,7 +38,7 @@ namespace Student2
         private void visitPDbut_Click(object sender, EventArgs e)
         {
             this.Hide();
-            if (currentPatIDtoPass != "-1")
+            if (currentPatIDtoPass != -1)
             {
                 Form PatientDemographics = new PatientDemographics(this, currentPatIDtoPass);
                 PatientDemographics.Show();
@@ -52,7 +52,7 @@ namespace Student2
             }
         }
 
-        private string currentPatIDtoPass = "-1"; //default if no patient is selected
+        private int currentPatIDtoPass = -1; //default if no patient is selected
 
         private void SelectPatient_Load(object sender, EventArgs e)
         {
@@ -98,7 +98,7 @@ namespace Student2
         private void listBoxSP_SelectedIndexChanged(object sender, EventArgs e)
         {
             var currentPatID = listBoxSP.SelectedItem as patientItem;
-            currentPatIDtoPass = currentPatID.PatientID.ToString();
+            currentPatIDtoPass = currentPatID.PatientID;
 
 
 
@@ -109,7 +109,7 @@ namespace Student2
                 {
                     MySqlCommand cmd = conn.CreateCommand();
                     conn.Open(); //Opening connection to database
-                    cmd.CommandText = "SELECT PtFirstName, PtLastName " + "FROM patientdemographics " + "WHERE PatientID = "+ currentPatID.PatientID.ToString();
+                    cmd.CommandText = "SELECT PtFirstName, PtLastName " + "FROM patientdemographics " + "WHERE PatientID = "+ currentPatID.PatientID;
                     MySqlDataReader reader = cmd.ExecuteReader(); //Helps me read the command that we executed
                     while (reader.Read())
                     {
@@ -122,14 +122,6 @@ namespace Student2
                     MessageBox.Show("DB error " + ex.Message);
                 }
             }
-        }
-
-        private void addButGMH_Click(object sender, EventArgs e)
-        {
-            Form AddPatient = new AddPatient();
-            AddPatient.Owner = this;
-            AddPatient.ShowDialog();
-            refreshListBox();
         }
     }
 }

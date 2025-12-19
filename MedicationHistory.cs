@@ -33,6 +33,12 @@ namespace Student2
         private void MedicationHistory_Load(object sender, EventArgs e)
         {
             BackColor = Color.FromArgb(185, 209, 234);
+            refreshDataGrid();
+            populateCB();
+        }
+
+        public void refreshDataGrid()
+        {
             string connString = "server=localhost;uid=root;pwd=toor;database=its245";
             using (var conn = new MySqlConnection(connString))
             {
@@ -50,7 +56,6 @@ namespace Student2
                     MessageBox.Show("DB error " + ex.Message);
                 }
             }
-            populateCB();
         }
 
         public void populateCB()
@@ -129,6 +134,15 @@ namespace Student2
             currentPatIDtoPass = selectPatientCB.SelectedValue.ToString();
             refreshNameLabel();
             MedicationHistory_Load(sender,  e);
+        }
+
+        private void addButMH_Click(object sender, EventArgs e)
+        {
+            Form AddMedicationHistory = new AddMedicationHistory();
+            AddMedicationHistory.Owner = this;
+            AddMedicationHistory.ShowDialog();
+            refreshDataGrid();
+            populateCB();
         }
     }
 }

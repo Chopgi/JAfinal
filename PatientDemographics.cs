@@ -13,14 +13,14 @@ namespace Student2
 {
     public partial class PatientDemographics : Form
     {
-        string currentPatIDtoPass = "-1";
+        int currentPatIDtoPass = -1;
         public PatientDemographics()
         {
             InitializeComponent();
             this.FormClosed += (s, args) => Application.Exit();
         }
 
-        public PatientDemographics(Form f, string patientID)
+        public PatientDemographics(Form f, int patientID)
         {
             InitializeComponent();
             f.Dispose();
@@ -129,9 +129,18 @@ namespace Student2
 
         private void selectPatientCB_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            currentPatIDtoPass = selectPatientCB.SelectedValue.ToString();
+            currentPatIDtoPass = (int)selectPatientCB.SelectedValue;
             refreshNameLabel();
             refreshDataGrid();
+        }
+
+        private void addButPD_Click(object sender, EventArgs e)
+        {
+            Form AddPatient = new AddPatient();
+            AddPatient.Owner = this;
+            AddPatient.ShowDialog();
+            refreshDataGrid();
+            populateCB();
         }
     }
 }

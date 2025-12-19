@@ -31,17 +31,17 @@
             this.cancelBut = new System.Windows.Forms.Button();
             this.saveBut = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.commentsTB = new System.Windows.Forms.TextBox();
+            this.instructionsTB = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.referralTB = new System.Windows.Forms.TextBox();
-            this.DOEpicker = new System.Windows.Forms.DateTimePicker();
+            this.HCPidTB = new System.Windows.Forms.TextBox();
+            this.EXPdatePicker = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.DOBpicker = new System.Windows.Forms.DateTimePicker();
+            this.IMMdatepicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lNameTB = new System.Windows.Forms.TextBox();
-            this.fNameTB = new System.Windows.Forms.TextBox();
+            this.deliveryTB = new System.Windows.Forms.TextBox();
+            this.vaccineTB = new System.Windows.Forms.TextBox();
             this.addIHTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -77,14 +77,14 @@
             this.label25.TabIndex = 122;
             this.label25.Text = "Instructions";
             // 
-            // commentsTB
+            // instructionsTB
             // 
-            this.commentsTB.Location = new System.Drawing.Point(468, 91);
-            this.commentsTB.Margin = new System.Windows.Forms.Padding(2);
-            this.commentsTB.Multiline = true;
-            this.commentsTB.Name = "commentsTB";
-            this.commentsTB.Size = new System.Drawing.Size(101, 191);
-            this.commentsTB.TabIndex = 117;
+            this.instructionsTB.Location = new System.Drawing.Point(468, 91);
+            this.instructionsTB.Margin = new System.Windows.Forms.Padding(2);
+            this.instructionsTB.Multiline = true;
+            this.instructionsTB.Name = "instructionsTB";
+            this.instructionsTB.Size = new System.Drawing.Size(101, 191);
+            this.instructionsTB.TabIndex = 117;
             // 
             // label22
             // 
@@ -96,22 +96,22 @@
             this.label22.TabIndex = 121;
             this.label22.Text = "HCPId";
             // 
-            // referralTB
+            // HCPidTB
             // 
-            this.referralTB.Location = new System.Drawing.Point(231, 214);
-            this.referralTB.Margin = new System.Windows.Forms.Padding(2);
-            this.referralTB.Name = "referralTB";
-            this.referralTB.Size = new System.Drawing.Size(101, 20);
-            this.referralTB.TabIndex = 115;
+            this.HCPidTB.Location = new System.Drawing.Point(231, 214);
+            this.HCPidTB.Margin = new System.Windows.Forms.Padding(2);
+            this.HCPidTB.Name = "HCPidTB";
+            this.HCPidTB.Size = new System.Drawing.Size(101, 20);
+            this.HCPidTB.TabIndex = 115;
             // 
-            // DOEpicker
+            // EXPdatePicker
             // 
-            this.DOEpicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DOEpicker.Location = new System.Drawing.Point(348, 158);
-            this.DOEpicker.Margin = new System.Windows.Forms.Padding(2);
-            this.DOEpicker.Name = "DOEpicker";
-            this.DOEpicker.Size = new System.Drawing.Size(101, 20);
-            this.DOEpicker.TabIndex = 116;
+            this.EXPdatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.EXPdatePicker.Location = new System.Drawing.Point(348, 158);
+            this.EXPdatePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.EXPdatePicker.Name = "EXPdatePicker";
+            this.EXPdatePicker.Size = new System.Drawing.Size(101, 20);
+            this.EXPdatePicker.TabIndex = 116;
             // 
             // label12
             // 
@@ -123,14 +123,14 @@
             this.label12.TabIndex = 120;
             this.label12.Text = "ExperationDate";
             // 
-            // DOBpicker
+            // IMMdatepicker
             // 
-            this.DOBpicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DOBpicker.Location = new System.Drawing.Point(231, 158);
-            this.DOBpicker.Margin = new System.Windows.Forms.Padding(2);
-            this.DOBpicker.Name = "DOBpicker";
-            this.DOBpicker.Size = new System.Drawing.Size(101, 20);
-            this.DOBpicker.TabIndex = 112;
+            this.IMMdatepicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.IMMdatepicker.Location = new System.Drawing.Point(231, 158);
+            this.IMMdatepicker.Margin = new System.Windows.Forms.Padding(2);
+            this.IMMdatepicker.Name = "IMMdatepicker";
+            this.IMMdatepicker.Size = new System.Drawing.Size(101, 20);
+            this.IMMdatepicker.TabIndex = 112;
             // 
             // label4
             // 
@@ -166,21 +166,21 @@
             this.label1.TabIndex = 110;
             this.label1.Text = "Vaccine";
             // 
-            // lNameTB
+            // deliveryTB
             // 
-            this.lNameTB.Location = new System.Drawing.Point(348, 91);
-            this.lNameTB.Margin = new System.Windows.Forms.Padding(2);
-            this.lNameTB.Name = "lNameTB";
-            this.lNameTB.Size = new System.Drawing.Size(101, 20);
-            this.lNameTB.TabIndex = 108;
+            this.deliveryTB.Location = new System.Drawing.Point(348, 91);
+            this.deliveryTB.Margin = new System.Windows.Forms.Padding(2);
+            this.deliveryTB.Name = "deliveryTB";
+            this.deliveryTB.Size = new System.Drawing.Size(101, 20);
+            this.deliveryTB.TabIndex = 108;
             // 
-            // fNameTB
+            // vaccineTB
             // 
-            this.fNameTB.Location = new System.Drawing.Point(231, 91);
-            this.fNameTB.Margin = new System.Windows.Forms.Padding(2);
-            this.fNameTB.Name = "fNameTB";
-            this.fNameTB.Size = new System.Drawing.Size(101, 20);
-            this.fNameTB.TabIndex = 107;
+            this.vaccineTB.Location = new System.Drawing.Point(231, 91);
+            this.vaccineTB.Margin = new System.Windows.Forms.Padding(2);
+            this.vaccineTB.Name = "vaccineTB";
+            this.vaccineTB.Size = new System.Drawing.Size(101, 20);
+            this.vaccineTB.TabIndex = 107;
             // 
             // addIHTitle
             // 
@@ -202,17 +202,17 @@
             this.Controls.Add(this.cancelBut);
             this.Controls.Add(this.saveBut);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.commentsTB);
+            this.Controls.Add(this.instructionsTB);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.referralTB);
-            this.Controls.Add(this.DOEpicker);
+            this.Controls.Add(this.HCPidTB);
+            this.Controls.Add(this.EXPdatePicker);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.DOBpicker);
+            this.Controls.Add(this.IMMdatepicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lNameTB);
-            this.Controls.Add(this.fNameTB);
+            this.Controls.Add(this.deliveryTB);
+            this.Controls.Add(this.vaccineTB);
             this.Controls.Add(this.addIHTitle);
             this.Name = "AddImmunizationHistory";
             this.Text = "AddImmunizationHistory";
@@ -227,17 +227,17 @@
         private System.Windows.Forms.Button cancelBut;
         private System.Windows.Forms.Button saveBut;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox commentsTB;
+        private System.Windows.Forms.TextBox instructionsTB;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox referralTB;
-        private System.Windows.Forms.DateTimePicker DOEpicker;
+        private System.Windows.Forms.TextBox HCPidTB;
+        private System.Windows.Forms.DateTimePicker EXPdatePicker;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker DOBpicker;
+        private System.Windows.Forms.DateTimePicker IMMdatepicker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox lNameTB;
-        private System.Windows.Forms.TextBox fNameTB;
+        private System.Windows.Forms.TextBox deliveryTB;
+        private System.Windows.Forms.TextBox vaccineTB;
         private System.Windows.Forms.Label addIHTitle;
     }
 }

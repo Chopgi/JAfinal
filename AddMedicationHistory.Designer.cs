@@ -31,19 +31,19 @@
             this.cancelBut = new System.Windows.Forms.Button();
             this.saveBut = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.commentsTB = new System.Windows.Forms.TextBox();
+            this.instructionsTB = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.referralTB = new System.Windows.Forms.TextBox();
-            this.DOEpicker = new System.Windows.Forms.DateTimePicker();
+            this.prescriptionHCPTB = new System.Windows.Forms.TextBox();
+            this.MedEDdatePicker = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.DOBpicker = new System.Windows.Forms.DateTimePicker();
+            this.MedSDdatePicker = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
-            this.midInitialTB = new System.Windows.Forms.TextBox();
+            this.medUnitTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lNameTB = new System.Windows.Forms.TextBox();
-            this.fNameTB = new System.Windows.Forms.TextBox();
+            this.medAmtTB = new System.Windows.Forms.TextBox();
+            this.medicationTB = new System.Windows.Forms.TextBox();
             this.addMHTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -79,14 +79,14 @@
             this.label25.TabIndex = 105;
             this.label25.Text = "Instructions";
             // 
-            // commentsTB
+            // instructionsTB
             // 
-            this.commentsTB.Location = new System.Drawing.Point(468, 91);
-            this.commentsTB.Margin = new System.Windows.Forms.Padding(2);
-            this.commentsTB.Multiline = true;
-            this.commentsTB.Name = "commentsTB";
-            this.commentsTB.Size = new System.Drawing.Size(101, 191);
-            this.commentsTB.TabIndex = 91;
+            this.instructionsTB.Location = new System.Drawing.Point(468, 91);
+            this.instructionsTB.Margin = new System.Windows.Forms.Padding(2);
+            this.instructionsTB.Multiline = true;
+            this.instructionsTB.Name = "instructionsTB";
+            this.instructionsTB.Size = new System.Drawing.Size(101, 191);
+            this.instructionsTB.TabIndex = 91;
             // 
             // label22
             // 
@@ -98,22 +98,22 @@
             this.label22.TabIndex = 101;
             this.label22.Text = "PrescriptionHCP";
             // 
-            // referralTB
+            // prescriptionHCPTB
             // 
-            this.referralTB.Location = new System.Drawing.Point(231, 158);
-            this.referralTB.Margin = new System.Windows.Forms.Padding(2);
-            this.referralTB.Name = "referralTB";
-            this.referralTB.Size = new System.Drawing.Size(101, 20);
-            this.referralTB.TabIndex = 89;
+            this.prescriptionHCPTB.Location = new System.Drawing.Point(231, 158);
+            this.prescriptionHCPTB.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriptionHCPTB.Name = "prescriptionHCPTB";
+            this.prescriptionHCPTB.Size = new System.Drawing.Size(101, 20);
+            this.prescriptionHCPTB.TabIndex = 89;
             // 
-            // DOEpicker
+            // MedEDdatePicker
             // 
-            this.DOEpicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DOEpicker.Location = new System.Drawing.Point(348, 224);
-            this.DOEpicker.Margin = new System.Windows.Forms.Padding(2);
-            this.DOEpicker.Name = "DOEpicker";
-            this.DOEpicker.Size = new System.Drawing.Size(101, 20);
-            this.DOEpicker.TabIndex = 90;
+            this.MedEDdatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.MedEDdatePicker.Location = new System.Drawing.Point(348, 224);
+            this.MedEDdatePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.MedEDdatePicker.Name = "MedEDdatePicker";
+            this.MedEDdatePicker.Size = new System.Drawing.Size(101, 20);
+            this.MedEDdatePicker.TabIndex = 90;
             // 
             // label12
             // 
@@ -125,14 +125,14 @@
             this.label12.TabIndex = 95;
             this.label12.Text = "MedicationEndDate";
             // 
-            // DOBpicker
+            // MedSDdatePicker
             // 
-            this.DOBpicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DOBpicker.Location = new System.Drawing.Point(231, 224);
-            this.DOBpicker.Margin = new System.Windows.Forms.Padding(2);
-            this.DOBpicker.Name = "DOBpicker";
-            this.DOBpicker.Size = new System.Drawing.Size(101, 20);
-            this.DOBpicker.TabIndex = 62;
+            this.MedSDdatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.MedSDdatePicker.Location = new System.Drawing.Point(231, 224);
+            this.MedSDdatePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.MedSDdatePicker.Name = "MedSDdatePicker";
+            this.MedSDdatePicker.Size = new System.Drawing.Size(101, 20);
+            this.MedSDdatePicker.TabIndex = 62;
             // 
             // label16
             // 
@@ -144,13 +144,13 @@
             this.label16.TabIndex = 80;
             this.label16.Text = "MedicationUnit";
             // 
-            // midInitialTB
+            // medUnitTB
             // 
-            this.midInitialTB.Location = new System.Drawing.Point(348, 158);
-            this.midInitialTB.Margin = new System.Windows.Forms.Padding(2);
-            this.midInitialTB.Name = "midInitialTB";
-            this.midInitialTB.Size = new System.Drawing.Size(101, 20);
-            this.midInitialTB.TabIndex = 56;
+            this.medUnitTB.Location = new System.Drawing.Point(348, 158);
+            this.medUnitTB.Margin = new System.Windows.Forms.Padding(2);
+            this.medUnitTB.Name = "medUnitTB";
+            this.medUnitTB.Size = new System.Drawing.Size(101, 20);
+            this.medUnitTB.TabIndex = 56;
             // 
             // label4
             // 
@@ -186,21 +186,21 @@
             this.label1.TabIndex = 57;
             this.label1.Text = "Medication";
             // 
-            // lNameTB
+            // medAmtTB
             // 
-            this.lNameTB.Location = new System.Drawing.Point(348, 91);
-            this.lNameTB.Margin = new System.Windows.Forms.Padding(2);
-            this.lNameTB.Name = "lNameTB";
-            this.lNameTB.Size = new System.Drawing.Size(101, 20);
-            this.lNameTB.TabIndex = 55;
+            this.medAmtTB.Location = new System.Drawing.Point(348, 91);
+            this.medAmtTB.Margin = new System.Windows.Forms.Padding(2);
+            this.medAmtTB.Name = "medAmtTB";
+            this.medAmtTB.Size = new System.Drawing.Size(101, 20);
+            this.medAmtTB.TabIndex = 55;
             // 
-            // fNameTB
+            // medicationTB
             // 
-            this.fNameTB.Location = new System.Drawing.Point(231, 91);
-            this.fNameTB.Margin = new System.Windows.Forms.Padding(2);
-            this.fNameTB.Name = "fNameTB";
-            this.fNameTB.Size = new System.Drawing.Size(101, 20);
-            this.fNameTB.TabIndex = 54;
+            this.medicationTB.Location = new System.Drawing.Point(231, 91);
+            this.medicationTB.Margin = new System.Windows.Forms.Padding(2);
+            this.medicationTB.Name = "medicationTB";
+            this.medicationTB.Size = new System.Drawing.Size(101, 20);
+            this.medicationTB.TabIndex = 54;
             // 
             // addMHTitle
             // 
@@ -222,19 +222,19 @@
             this.Controls.Add(this.cancelBut);
             this.Controls.Add(this.saveBut);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.commentsTB);
+            this.Controls.Add(this.instructionsTB);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.referralTB);
-            this.Controls.Add(this.DOEpicker);
+            this.Controls.Add(this.prescriptionHCPTB);
+            this.Controls.Add(this.MedEDdatePicker);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.DOBpicker);
+            this.Controls.Add(this.MedSDdatePicker);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.midInitialTB);
+            this.Controls.Add(this.medUnitTB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lNameTB);
-            this.Controls.Add(this.fNameTB);
+            this.Controls.Add(this.medAmtTB);
+            this.Controls.Add(this.medicationTB);
             this.Controls.Add(this.addMHTitle);
             this.Name = "AddMedicationHistory";
             this.Text = "AddMedicationHistory";
@@ -249,19 +249,19 @@
         private System.Windows.Forms.Button cancelBut;
         private System.Windows.Forms.Button saveBut;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox commentsTB;
+        private System.Windows.Forms.TextBox instructionsTB;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox referralTB;
-        private System.Windows.Forms.DateTimePicker DOEpicker;
+        private System.Windows.Forms.TextBox prescriptionHCPTB;
+        private System.Windows.Forms.DateTimePicker MedEDdatePicker;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker DOBpicker;
+        private System.Windows.Forms.DateTimePicker MedSDdatePicker;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox midInitialTB;
+        private System.Windows.Forms.TextBox medUnitTB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox lNameTB;
-        private System.Windows.Forms.TextBox fNameTB;
+        private System.Windows.Forms.TextBox medAmtTB;
+        private System.Windows.Forms.TextBox medicationTB;
         private System.Windows.Forms.Label addMHTitle;
     }
 }

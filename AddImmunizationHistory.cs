@@ -13,11 +13,11 @@ namespace Student2
 {
     public partial class AddImmunizationHistory : Form
     {
-        string currentPatIDtoPass = "-1";
-        public AddImmunizationHistory(Form f, string patientID)
+        int currentPatIDtoEdit = -1;
+        public AddImmunizationHistory(Form f, int patientID)
         {
             InitializeComponent();
-            currentPatIDtoPass = patientID;
+            currentPatIDtoEdit = patientID;
         }
         public AddImmunizationHistory()
         {
@@ -57,22 +57,19 @@ namespace Student2
                     conn.Open();
                     cmd.Connection = conn;
 
-                    cmd.CommandText = @"INSERT INTO patientdemographics(`HospitalMR#`, PtLastName, PtPreviousLastName, PtFirstName, PtMiddleInitial, Suffix, HomeAddress, HomeCity, `HomeState/Province/Region`, HomeZip, Country, Citizenship, PtHomePhone, EmergencyPhoneNumber, EmailAddress, SSN, DOB, Gender, EthnicAssociation, Religion, MaritalStatus, EmploymentStatus, DateofExpire, Referral, CurrentPrimaryHCPId, Comments, DateEntered, NextOfKinID, NextOfKinRelationshipToPatient)" + " VALUES(@HospitalMR, @PtLastName, @PtPreviousLastName, @PtFirstName, @PtMiddleInitial, @Suffix, @HomeAddress, @HomeCity, @HomeStateProvinceRegion, @HomeZip, @Country, @Citizenship, @PtHomePhone, @EmergencyPhoneNumber, @EmailAddress, @SSN, @DOB, @Gender, @EthnicAssociation, @Religion, @MaritalStatus, @EmploymentStatus, @DateofExpire, @Referral, @CurrentPrimaryHCPId, @Comments, @DateEntered, @NextOfKinID, @NextOfKinRelationshipToPatient)";
-                    if (!string.IsNullOrEmpty(fNameTB.Text) &&
-                        !string.IsNullOrEmpty(lNameTB.Text))
+                    cmd.CommandText = @"INSERT INTO immunizationshistorytable(PatientID, Vaccine, ImmunizationDate, ExperationDate, Delivery, Comments, HCPId)" + " VALUES(" + currentPatIDtoEdit + ", @Vaccine, @ImmunizationDate, @ExperationDate, @Delivery, @Comments, @HCPId)";
+                    if (!string.IsNullOrEmpty(vaccineTB.Text) &&
+                        currentPatIDtoEdit != -1)
                     {
-                        cmd.Parameters.AddWithValue("@PtLastName", getTrueValForSQL(lNameTB.Text));
-                        cmd.Parameters.AddWithValue("@PtPreviousLastName", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@PtFirstName", getTrueValForSQL(fNameTB.Text));
+                        cmd.Parameters.AddWithValue("@Vaccine", getTrueValForSQL(vaccineTB.Text));
+                        cmd.Parameters.AddWithValue("@ImmunizationDate", IMMdatepicker.Value);
+                        cmd.Parameters.AddWithValue("@ExperationDate", IMMdatepicker.Value);
+                        cmd.Parameters.AddWithValue("@Delivery", getTrueValForSQL(deliveryTB.Text));
+                        cmd.Parameters.AddWithValue("@Comments", getTrueValForSQL(deliveryTB.Text));
+                        cmd.Parameters.AddWithValue("@HCPId", getTrueValForSQL(deliveryTB.Text));
 
-                        cmd.Parameters.AddWithValue("@DOB", DOBpicker.Value);
-
-                        cmd.Parameters.AddWithValue("@DateofExpire", DOEpicker.Value);
-                        cmd.Parameters.AddWithValue("@Referral", getTrueValForSQL(referralTB.Text));
-                        cmd.Parameters.AddWithValue("@Comments", getTrueValForSQL(commentsTB.Text));
                         cmd.Parameters.AddWithValue("@DateEntered", DateTime.Now);
-                        cmd.Parameters.AddWithValue("@NextOfKinID", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@NextOfKinRelationshipToPatient", DBNull.Value);
+                        
                         cmd.Prepare();
                         cmd.ExecuteNonQuery();
 

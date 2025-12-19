@@ -32,7 +32,6 @@
             this.deleteButGMH = new System.Windows.Forms.Button();
             this.undoButGMH = new System.Windows.Forms.Button();
             this.modifyButGMH = new System.Windows.Forms.Button();
-            this.addButGMH = new System.Windows.Forms.Button();
             this.saveButGMH = new System.Windows.Forms.Button();
             this.visitPDbut = new System.Windows.Forms.Button();
             this.listBoxSP = new System.Windows.Forms.ListBox();
@@ -80,17 +79,6 @@
             this.modifyButGMH.Text = "Modify";
             this.modifyButGMH.UseVisualStyleBackColor = true;
             // 
-            // addButGMH
-            // 
-            this.addButGMH.Location = new System.Drawing.Point(215, 420);
-            this.addButGMH.Margin = new System.Windows.Forms.Padding(2);
-            this.addButGMH.Name = "addButGMH";
-            this.addButGMH.Size = new System.Drawing.Size(56, 19);
-            this.addButGMH.TabIndex = 21;
-            this.addButGMH.Text = "Add";
-            this.addButGMH.UseVisualStyleBackColor = true;
-            this.addButGMH.Click += new System.EventHandler(this.addButGMH_Click);
-            // 
             // saveButGMH
             // 
             this.saveButGMH.Location = new System.Drawing.Point(373, 420);
@@ -131,7 +119,6 @@
             this.Controls.Add(this.deleteButGMH);
             this.Controls.Add(this.undoButGMH);
             this.Controls.Add(this.modifyButGMH);
-            this.Controls.Add(this.addButGMH);
             this.Controls.Add(this.saveButGMH);
             this.Controls.Add(this.nameAgeLabel);
             this.Name = "SelectPatient";
@@ -147,7 +134,6 @@
         private System.Windows.Forms.Button deleteButGMH;
         private System.Windows.Forms.Button undoButGMH;
         private System.Windows.Forms.Button modifyButGMH;
-        private System.Windows.Forms.Button addButGMH;
         private System.Windows.Forms.Button saveButGMH;
         private System.Windows.Forms.Button visitPDbut;
         private System.Windows.Forms.ListBox listBoxSP;

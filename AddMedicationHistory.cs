@@ -13,11 +13,11 @@ namespace Student2
 {
     public partial class AddMedicationHistory : Form
     {
-        string currentPatIDtoPass = "-1";
+        string currentPatIDtoEdit = "-1";
         public AddMedicationHistory(Form f, string patientID)
         {
             InitializeComponent();
-            currentPatIDtoPass = patientID;
+            currentPatIDtoEdit = patientID;
         }
         public AddMedicationHistory()
         {
@@ -58,18 +58,18 @@ namespace Student2
                     cmd.Connection = conn;
 
                     cmd.CommandText = @"INSERT INTO patientdemographics(`HospitalMR#`, PtLastName, PtPreviousLastName, PtFirstName, PtMiddleInitial, Suffix, HomeAddress, HomeCity, `HomeState/Province/Region`, HomeZip, Country, Citizenship, PtHomePhone, EmergencyPhoneNumber, EmailAddress, SSN, DOB, Gender, EthnicAssociation, Religion, MaritalStatus, EmploymentStatus, DateofExpire, Referral, CurrentPrimaryHCPId, Comments, DateEntered, NextOfKinID, NextOfKinRelationshipToPatient)" + " VALUES(@HospitalMR, @PtLastName, @PtPreviousLastName, @PtFirstName, @PtMiddleInitial, @Suffix, @HomeAddress, @HomeCity, @HomeStateProvinceRegion, @HomeZip, @Country, @Citizenship, @PtHomePhone, @EmergencyPhoneNumber, @EmailAddress, @SSN, @DOB, @Gender, @EthnicAssociation, @Religion, @MaritalStatus, @EmploymentStatus, @DateofExpire, @Referral, @CurrentPrimaryHCPId, @Comments, @DateEntered, @NextOfKinID, @NextOfKinRelationshipToPatient)";
-                    if (!string.IsNullOrEmpty(fNameTB.Text) &&
-                        !string.IsNullOrEmpty(lNameTB.Text))
+                    if (!string.IsNullOrEmpty(medicationTB.Text) &&
+                        !string.IsNullOrEmpty(medAmtTB.Text))
                     {
-                        cmd.Parameters.AddWithValue("@PtLastName", getTrueValForSQL(lNameTB.Text));
+                        cmd.Parameters.AddWithValue("@PtLastName", getTrueValForSQL(medAmtTB.Text));
                         cmd.Parameters.AddWithValue("@PtPreviousLastName", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@PtFirstName", getTrueValForSQL(fNameTB.Text));
+                        cmd.Parameters.AddWithValue("@PtFirstName", getTrueValForSQL(medicationTB.Text));
 
-                        cmd.Parameters.AddWithValue("@DOB", DOBpicker.Value);
+                        cmd.Parameters.AddWithValue("@DOB", MedSDdatePicker.Value);
 
-                        cmd.Parameters.AddWithValue("@DateofExpire", DOEpicker.Value);
-                        cmd.Parameters.AddWithValue("@Referral", getTrueValForSQL(referralTB.Text));
-                        cmd.Parameters.AddWithValue("@Comments", getTrueValForSQL(commentsTB.Text));
+                        cmd.Parameters.AddWithValue("@DateofExpire", MedEDdatePicker.Value);
+                        cmd.Parameters.AddWithValue("@Referral", getTrueValForSQL(prescriptionHCPTB.Text));
+                        cmd.Parameters.AddWithValue("@Comments", getTrueValForSQL(instructionsTB.Text));
                         cmd.Parameters.AddWithValue("@DateEntered", DateTime.Now);
                         cmd.Parameters.AddWithValue("@NextOfKinID", DBNull.Value);
                         cmd.Parameters.AddWithValue("@NextOfKinRelationshipToPatient", DBNull.Value);

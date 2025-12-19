@@ -118,6 +118,7 @@
             this.addButGMH.TabIndex = 20;
             this.addButGMH.Text = "Add";
             this.addButGMH.UseVisualStyleBackColor = true;
+            this.addButGMH.Click += new System.EventHandler(this.addButPD_Click);
             // 
             // saveButGMH
             // 
