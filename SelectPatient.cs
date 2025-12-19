@@ -81,7 +81,7 @@ namespace Student2
                         string homephone = reader.GetString(3);
                         if (Convert.IsDBNull(reader.GetString(3)))
                         {
-                            homephone = "0";
+                            homephone = "000-000-0000";
                         }
 
                         listBoxSP.Items.Add(new patientItem(patientID, $"{firstname}, {lastname}, {homephone}"));

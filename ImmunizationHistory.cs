@@ -13,14 +13,14 @@ namespace Student2
 {
     public partial class ImmunizationHistory : Form
     {
-        string currentPatIDtoPass = "-1";
+        int currentPatIDtoPass = -1;
         public ImmunizationHistory()
         {
             InitializeComponent();
             this.FormClosed += (s, args) => Application.Exit();
         }
 
-        public ImmunizationHistory(Form f, string patientID)
+        public ImmunizationHistory(Form f, int patientID)
         {
             InitializeComponent();
             f.Dispose();
@@ -125,7 +125,7 @@ namespace Student2
 
         private void selectPatientCB_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            currentPatIDtoPass = selectPatientCB.SelectedValue.ToString();
+            currentPatIDtoPass = (int)selectPatientCB.SelectedValue;
             refreshNameLabel();
             ImmunizationHistory_Load(sender, e);
         }

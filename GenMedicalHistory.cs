@@ -13,14 +13,14 @@ namespace Student2
 {
     public partial class GenMedicalHistory : Form
     {
-        string currentPatIDtoPass = "-1";
+        int currentPatIDtoPass = -1;
         public GenMedicalHistory()
         {
             InitializeComponent();
             this.FormClosed += (s, args) => Application.Exit();
         }
 
-        public GenMedicalHistory(Form f, string patientID)
+        public GenMedicalHistory(Form f, int patientID)
         {
             InitializeComponent();
             f.Dispose();
@@ -132,7 +132,7 @@ namespace Student2
 
         private void selectPatientCB_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            currentPatIDtoPass = selectPatientCB.SelectedValue.ToString();
+            currentPatIDtoPass = (int)selectPatientCB.SelectedValue;
             refreshNameLabel();
             GenMedicalHistory_Load(sender, e);
         }

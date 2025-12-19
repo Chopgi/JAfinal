@@ -13,8 +13,8 @@ namespace Student2
 {
     public partial class AddMedicationHistory : Form
     {
-        string currentPatIDtoEdit = "-1";
-        public AddMedicationHistory(Form f, string patientID)
+        int currentPatIDtoEdit = -1;
+        public AddMedicationHistory(Form f, int patientID)
         {
             InitializeComponent();
             currentPatIDtoEdit = patientID;
