@@ -129,5 +129,13 @@ namespace Student2
             refreshNameLabel();
             ImmunizationHistory_Load(sender, e);
         }
+
+        private void addButMH_Click(object sender, EventArgs e)
+        {
+            Form AddImmunizationHistory = new AddImmunizationHistory(this, currentPatIDtoPass);
+            AddImmunizationHistory.Owner = this;
+            AddImmunizationHistory.ShowDialog();
+            //refreshListBox();
+        }
     }
 }

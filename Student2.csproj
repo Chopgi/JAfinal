@@ -95,6 +95,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddImmunizationHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddImmunizationHistory.Designer.cs">
+      <DependentUpon>AddImmunizationHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMedicationHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMedicationHistory.Designer.cs">
+      <DependentUpon>AddMedicationHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +151,12 @@
     <Compile Include="SelectPatient.Designer.cs">
       <DependentUpon>SelectPatient.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddImmunizationHistory.resx">
+      <DependentUpon>AddImmunizationHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMedicationHistory.resx">
+      <DependentUpon>AddMedicationHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPatient.resx">
       <DependentUpon>AddPatient.cs</DependentUpon>
     </EmbeddedResource>

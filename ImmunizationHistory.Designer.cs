@@ -125,6 +125,7 @@
             this.addButMH.TabIndex = 20;
             this.addButMH.Text = "Add";
             this.addButMH.UseVisualStyleBackColor = true;
+            this.addButMH.Click += new System.EventHandler(this.addButMH_Click);
             // 
             // saveButMH
             // 
