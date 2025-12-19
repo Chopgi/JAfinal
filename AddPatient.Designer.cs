@@ -47,13 +47,12 @@
             this.emailTB = new System.Windows.Forms.TextBox();
             this.phoneTB = new System.Windows.Forms.TextBox();
             this.stateCB = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DOBpicker = new System.Windows.Forms.DateTimePicker();
             this.saveBut = new System.Windows.Forms.Button();
             this.cancelBut = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.countryTB = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DOEpicker = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.emergencyPhoneTB = new System.Windows.Forms.TextBox();
@@ -81,6 +80,7 @@
             this.commentsTB = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.primaryHCPidTB = new System.Windows.Forms.TextBox();
+            this.genderTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // addPatTitle
@@ -158,12 +158,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(235, 167);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.Size = new System.Drawing.Size(24, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "City";
             // 
@@ -268,22 +266,14 @@
             this.stateCB.Size = new System.Drawing.Size(101, 21);
             this.stateCB.TabIndex = 12;
             // 
-            // maskedTextBox1
+            // DOBpicker
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(4, 124);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(101, 20);
-            this.maskedTextBox1.TabIndex = 5;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(118, 124);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(101, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.DOBpicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DOBpicker.Location = new System.Drawing.Point(118, 124);
+            this.DOBpicker.Margin = new System.Windows.Forms.Padding(2);
+            this.DOBpicker.Name = "DOBpicker";
+            this.DOBpicker.Size = new System.Drawing.Size(101, 20);
+            this.DOBpicker.TabIndex = 6;
             // 
             // saveBut
             // 
@@ -294,6 +284,7 @@
             this.saveBut.TabIndex = 25;
             this.saveBut.Text = "Save";
             this.saveBut.UseVisualStyleBackColor = true;
+            this.saveBut.Click += new System.EventHandler(this.saveBut_Click);
             // 
             // cancelBut
             // 
@@ -324,14 +315,14 @@
             this.countryTB.Size = new System.Drawing.Size(101, 20);
             this.countryTB.TabIndex = 14;
             // 
-            // dateTimePicker2
+            // DOEpicker
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(352, 290);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(101, 20);
-            this.dateTimePicker2.TabIndex = 23;
+            this.DOEpicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DOEpicker.Location = new System.Drawing.Point(352, 290);
+            this.DOEpicker.Margin = new System.Windows.Forms.Padding(2);
+            this.DOEpicker.Name = "DOEpicker";
+            this.DOEpicker.Size = new System.Drawing.Size(101, 20);
+            this.DOEpicker.TabIndex = 23;
             // 
             // label12
             // 
@@ -577,12 +568,21 @@
             this.primaryHCPidTB.Size = new System.Drawing.Size(101, 20);
             this.primaryHCPidTB.TabIndex = 20;
             // 
+            // genderTB
+            // 
+            this.genderTB.Location = new System.Drawing.Point(4, 124);
+            this.genderTB.Margin = new System.Windows.Forms.Padding(2);
+            this.genderTB.Name = "genderTB";
+            this.genderTB.Size = new System.Drawing.Size(101, 20);
+            this.genderTB.TabIndex = 53;
+            // 
             // AddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(694, 404);
+            this.Controls.Add(this.genderTB);
             this.Controls.Add(this.cancelBut);
             this.Controls.Add(this.saveBut);
             this.Controls.Add(this.label25);
@@ -605,12 +605,11 @@
             this.Controls.Add(this.religionTB);
             this.Controls.Add(this.emergencyPhoneTB);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.DOEpicker);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.countryTB);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.DOBpicker);
             this.Controls.Add(this.suffixCB);
             this.Controls.Add(this.stateCB);
             this.Controls.Add(this.label9);
@@ -666,13 +665,12 @@
         private System.Windows.Forms.TextBox emailTB;
         private System.Windows.Forms.TextBox phoneTB;
         private System.Windows.Forms.ComboBox stateCB;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DOBpicker;
         private System.Windows.Forms.Button saveBut;
         private System.Windows.Forms.Button cancelBut;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox countryTB;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker DOEpicker;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox emergencyPhoneTB;
@@ -700,5 +698,6 @@
         private System.Windows.Forms.TextBox commentsTB;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox primaryHCPidTB;
+        private System.Windows.Forms.TextBox genderTB;
     }
 }

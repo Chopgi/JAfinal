@@ -57,6 +57,12 @@ namespace Student2
         private void SelectPatient_Load(object sender, EventArgs e)
         {
             BackColor = Color.FromArgb(185, 209, 234);
+            refreshListBox();
+
+        }
+
+        public void refreshListBox()
+        {
             string connString = "server=localhost;uid=root;pwd=toor;database=its245";
             using (var conn = new MySqlConnection(connString))
             {
@@ -121,7 +127,9 @@ namespace Student2
         private void addButGMH_Click(object sender, EventArgs e)
         {
             Form AddPatient = new AddPatient();
-            AddPatient.Show();
+            AddPatient.Owner = this;
+            AddPatient.ShowDialog();
+            refreshListBox();
         }
     }
 }
