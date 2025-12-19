@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,9 +37,41 @@ namespace Student2
 
         private void loginBut_Click(object sender, EventArgs e)
         {
-            Form SelectPatient = new SelectPatient();
-            SelectPatient.Show();
-            this.Hide();
+            if (!string.IsNullOrEmpty(usernameTB.Text) && !string.IsNullOrEmpty(passwordTB.Text))
+            {
+                string connString = "server=localhost;uid=root;pwd=toor;database=its245";
+                using (var conn = new MySqlConnection(connString))
+                {
+                    try
+                    {
+                        MySqlCommand cmd = conn.CreateCommand();
+                        conn.Open();
+                        cmd.CommandText = "SELECT UserName, Password " + "FROM login " + "WHERE deleted NOT IN (1) AND " + "UserName IN ('" + usernameTB.Text + "')";
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            string DBuser = reader.GetString(0);
+                            string DBpass = reader.GetString(1);
+                            if (usernameTB.Text == DBuser && passwordTB.Text == DBpass)
+                            {
+                                Form SelectPatient = new SelectPatient();
+                                SelectPatient.Show();
+                                this.Hide();
+                            }
+                        }
+                        reader.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("DB error: " + ex.Message);
+                    }
+                } 
+            }
+            else
+            {
+                MessageBox.Show("Please input both a username and password.");
+
+            }
         }
     }
 }

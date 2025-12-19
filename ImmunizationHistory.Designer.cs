@@ -38,6 +38,7 @@
             this.addButMH = new System.Windows.Forms.Button();
             this.saveButMH = new System.Windows.Forms.Button();
             this.visitMHbut = new System.Windows.Forms.Button();
+            this.selectPatientCB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,11 +147,22 @@
             this.visitMHbut.UseVisualStyleBackColor = true;
             this.visitMHbut.Click += new System.EventHandler(this.visitMHbut_Click);
             // 
+            // selectPatientCB
+            // 
+            this.selectPatientCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectPatientCB.FormattingEnabled = true;
+            this.selectPatientCB.Location = new System.Drawing.Point(42, 82);
+            this.selectPatientCB.Name = "selectPatientCB";
+            this.selectPatientCB.Size = new System.Drawing.Size(170, 21);
+            this.selectPatientCB.TabIndex = 30;
+            this.selectPatientCB.SelectionChangeCommitted += new System.EventHandler(this.selectPatientCB_SelectionChangeCommitted);
+            // 
             // ImmunizationHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.selectPatientCB);
             this.Controls.Add(this.visitMHbut);
             this.Controls.Add(this.visitPDbut);
             this.Controls.Add(this.dataGridView1);
@@ -182,5 +194,6 @@
         private System.Windows.Forms.Button addButMH;
         private System.Windows.Forms.Button saveButMH;
         private System.Windows.Forms.Button visitMHbut;
+        private System.Windows.Forms.ComboBox selectPatientCB;
     }
 }

@@ -38,6 +38,7 @@
             this.nameAgeLabel = new System.Windows.Forms.Label();
             this.visitPDbut = new System.Windows.Forms.Button();
             this.visitIHbut = new System.Windows.Forms.Button();
+            this.selectPatientCB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGMH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,11 +150,22 @@
             this.visitIHbut.UseVisualStyleBackColor = true;
             this.visitIHbut.Click += new System.EventHandler(this.visitIHbut_Click);
             // 
+            // selectPatientCB
+            // 
+            this.selectPatientCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectPatientCB.FormattingEnabled = true;
+            this.selectPatientCB.Location = new System.Drawing.Point(14, 56);
+            this.selectPatientCB.Name = "selectPatientCB";
+            this.selectPatientCB.Size = new System.Drawing.Size(170, 21);
+            this.selectPatientCB.TabIndex = 29;
+            this.selectPatientCB.SelectionChangeCommitted += new System.EventHandler(this.selectPatientCB_SelectionChangeCommitted);
+            // 
             // GenMedicalHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.selectPatientCB);
             this.Controls.Add(this.visitIHbut);
             this.Controls.Add(this.visitPDbut);
             this.Controls.Add(this.nameAgeLabel);
@@ -186,5 +198,6 @@
         private System.Windows.Forms.Label nameAgeLabel;
         private System.Windows.Forms.Button visitPDbut;
         private System.Windows.Forms.Button visitIHbut;
+        private System.Windows.Forms.ComboBox selectPatientCB;
     }
 }

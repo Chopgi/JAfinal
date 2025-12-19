@@ -259,7 +259,59 @@
             // 
             // stateCB
             // 
+            this.stateCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.stateCB.FormattingEnabled = true;
+            this.stateCB.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
             this.stateCB.Location = new System.Drawing.Point(352, 179);
             this.stateCB.Margin = new System.Windows.Forms.Padding(2);
             this.stateCB.Name = "stateCB";
@@ -574,7 +626,7 @@
             this.genderTB.Margin = new System.Windows.Forms.Padding(2);
             this.genderTB.Name = "genderTB";
             this.genderTB.Size = new System.Drawing.Size(101, 20);
-            this.genderTB.TabIndex = 53;
+            this.genderTB.TabIndex = 5;
             // 
             // AddPatient
             // 
@@ -637,7 +689,7 @@
             this.Controls.Add(this.addPatTitle);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddPatient";
-            this.Text = "AddPatient";
+            this.Text = "Add New Patient";
             this.Load += new System.EventHandler(this.AddPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

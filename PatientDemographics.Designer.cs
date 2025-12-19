@@ -142,12 +142,13 @@
             // 
             // selectPatientCB
             // 
+            this.selectPatientCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectPatientCB.FormattingEnabled = true;
-            this.selectPatientCB.Location = new System.Drawing.Point(77, 79);
+            this.selectPatientCB.Location = new System.Drawing.Point(39, 82);
             this.selectPatientCB.Name = "selectPatientCB";
-            this.selectPatientCB.Size = new System.Drawing.Size(121, 21);
+            this.selectPatientCB.Size = new System.Drawing.Size(170, 21);
             this.selectPatientCB.TabIndex = 28;
-            this.selectPatientCB.Text = "--Select Patient --";
+            this.selectPatientCB.SelectionChangeCommitted += new System.EventHandler(this.selectPatientCB_SelectionChangeCommitted);
             // 
             // visitIHbut
             // 
