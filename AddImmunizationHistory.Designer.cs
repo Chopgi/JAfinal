@@ -31,7 +31,7 @@
             this.cancelBut = new System.Windows.Forms.Button();
             this.saveBut = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.instructionsTB = new System.Windows.Forms.TextBox();
+            this.commentsTB = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.HCPidTB = new System.Windows.Forms.TextBox();
             this.EXPdatePicker = new System.Windows.Forms.DateTimePicker();
@@ -73,18 +73,18 @@
             this.label25.Location = new System.Drawing.Point(465, 78);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(61, 13);
+            this.label25.Size = new System.Drawing.Size(56, 13);
             this.label25.TabIndex = 122;
-            this.label25.Text = "Instructions";
+            this.label25.Text = "Comments";
             // 
-            // instructionsTB
+            // commentsTB
             // 
-            this.instructionsTB.Location = new System.Drawing.Point(468, 91);
-            this.instructionsTB.Margin = new System.Windows.Forms.Padding(2);
-            this.instructionsTB.Multiline = true;
-            this.instructionsTB.Name = "instructionsTB";
-            this.instructionsTB.Size = new System.Drawing.Size(101, 191);
-            this.instructionsTB.TabIndex = 117;
+            this.commentsTB.Location = new System.Drawing.Point(468, 91);
+            this.commentsTB.Margin = new System.Windows.Forms.Padding(2);
+            this.commentsTB.Multiline = true;
+            this.commentsTB.Name = "commentsTB";
+            this.commentsTB.Size = new System.Drawing.Size(101, 191);
+            this.commentsTB.TabIndex = 117;
             // 
             // label22
             // 
@@ -202,7 +202,7 @@
             this.Controls.Add(this.cancelBut);
             this.Controls.Add(this.saveBut);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.instructionsTB);
+            this.Controls.Add(this.commentsTB);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.HCPidTB);
             this.Controls.Add(this.EXPdatePicker);
@@ -227,7 +227,7 @@
         private System.Windows.Forms.Button cancelBut;
         private System.Windows.Forms.Button saveBut;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox instructionsTB;
+        private System.Windows.Forms.TextBox commentsTB;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox HCPidTB;
         private System.Windows.Forms.DateTimePicker EXPdatePicker;

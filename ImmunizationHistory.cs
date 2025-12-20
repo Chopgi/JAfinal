@@ -51,6 +51,12 @@ namespace Student2
         private void ImmunizationHistory_Load(object sender, EventArgs e)
         {
             BackColor = Color.FromArgb(185, 209, 234);
+            refreshListBox();
+            populateCB();
+        }
+
+        public void refreshListBox()
+        {
             string connString = "server=localhost;uid=root;pwd=toor;database=its245";
             using (var conn = new MySqlConnection(connString))
             {
@@ -68,7 +74,6 @@ namespace Student2
                     MessageBox.Show("DB error " + ex.Message);
                 }
             }
-            populateCB();
         }
 
         public void populateCB()
@@ -132,10 +137,10 @@ namespace Student2
 
         private void addButMH_Click(object sender, EventArgs e)
         {
-            Form AddImmunizationHistory = new AddImmunizationHistory(this, currentPatIDtoPass);
+            Form AddImmunizationHistory = new AddImmunizationHistory(currentPatIDtoPass);
             AddImmunizationHistory.Owner = this;
             AddImmunizationHistory.ShowDialog();
-            //refreshListBox();
+            refreshListBox();
         }
     }
 }

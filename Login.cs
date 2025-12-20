@@ -1,5 +1,4 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,8 +17,6 @@ namespace Student2
         public Login()
         {
             InitializeComponent();
-            bool GMHcheck = false;
-            bool MHcheck = false;
             this.FormClosed += (s, args) => Application.Exit();
         }
 
@@ -57,6 +54,10 @@ namespace Student2
                                 Form SelectPatient = new SelectPatient();
                                 SelectPatient.Show();
                                 this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid username or password.");
                             }
                         }
                         reader.Close();

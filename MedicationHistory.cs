@@ -138,7 +138,7 @@ namespace Student2
 
         private void addButMH_Click(object sender, EventArgs e)
         {
-            Form AddMedicationHistory = new AddMedicationHistory();
+            Form AddMedicationHistory = new AddMedicationHistory(currentPatIDtoPass);
             AddMedicationHistory.Owner = this;
             AddMedicationHistory.ShowDialog();
             refreshDataGrid();

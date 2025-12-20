@@ -14,7 +14,7 @@ namespace Student2
     public partial class AddMedicationHistory : Form
     {
         int currentPatIDtoEdit = -1;
-        public AddMedicationHistory(Form f, int patientID)
+        public AddMedicationHistory(int patientID)
         {
             InitializeComponent();
             currentPatIDtoEdit = patientID;
@@ -50,45 +50,42 @@ namespace Student2
         {
             string connString = "server=localhost;uid=root;pwd=toor;database=its245";
             using (var conn = new MySqlConnection(connString))
-            {
+            {                
                 try
                 {
                     MySqlCommand cmd = conn.CreateCommand();
                     conn.Open();
                     cmd.Connection = conn;
 
-                    cmd.CommandText = @"INSERT INTO patientdemographics(`HospitalMR#`, PtLastName, PtPreviousLastName, PtFirstName, PtMiddleInitial, Suffix, HomeAddress, HomeCity, `HomeState/Province/Region`, HomeZip, Country, Citizenship, PtHomePhone, EmergencyPhoneNumber, EmailAddress, SSN, DOB, Gender, EthnicAssociation, Religion, MaritalStatus, EmploymentStatus, DateofExpire, Referral, CurrentPrimaryHCPId, Comments, DateEntered, NextOfKinID, NextOfKinRelationshipToPatient)" + " VALUES(@HospitalMR, @PtLastName, @PtPreviousLastName, @PtFirstName, @PtMiddleInitial, @Suffix, @HomeAddress, @HomeCity, @HomeStateProvinceRegion, @HomeZip, @Country, @Citizenship, @PtHomePhone, @EmergencyPhoneNumber, @EmailAddress, @SSN, @DOB, @Gender, @EthnicAssociation, @Religion, @MaritalStatus, @EmploymentStatus, @DateofExpire, @Referral, @CurrentPrimaryHCPId, @Comments, @DateEntered, @NextOfKinID, @NextOfKinRelationshipToPatient)";
+                    cmd.CommandText = "INSERT INTO patientmedications(PatientID, Medication, MedicationAmt, MedicationUnit, Instructions, MedicationStartDate, MedicationEndDate, PrescriptionHCP)" + " VALUES(" + currentPatIDtoEdit + ", @Medication, @MedicationAmt, @MedicationUnit, @Instructions, @MedicationStartDate, @MedicationEndDate, @PrescriptionHCP)";
                     if (!string.IsNullOrEmpty(medicationTB.Text) &&
-                        !string.IsNullOrEmpty(medAmtTB.Text))
+                        currentPatIDtoEdit != -1)
                     {
-                        cmd.Parameters.AddWithValue("@PtLastName", getTrueValForSQL(medAmtTB.Text));
-                        cmd.Parameters.AddWithValue("@PtPreviousLastName", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@PtFirstName", getTrueValForSQL(medicationTB.Text));
+                        cmd.Parameters.AddWithValue("@Medication", getTrueValForSQL(medicationTB.Text));
+                        cmd.Parameters.AddWithValue("@MedicationAmt", getTrueValForSQL(medAmtTB.Text));
+                        cmd.Parameters.AddWithValue("@MedicationUnit", getTrueValForSQL(medUnitTB.Text));
+                        cmd.Parameters.AddWithValue("@Instructions", getTrueValForSQL(instructionsTB.Text));
+                        cmd.Parameters.AddWithValue("@MedicationStartDate", MedSDdatePicker.Value);
+                        cmd.Parameters.AddWithValue("@MedicationEndDate", MedEDdatePicker.Value);
+                        cmd.Parameters.AddWithValue("@PrescriptionHCP", getTrueValForSQL(prescriptionHCPTB.Text));
 
-                        cmd.Parameters.AddWithValue("@DOB", MedSDdatePicker.Value);
+                        //cmd.Parameters.AddWithValue("@DateEntered", DateTime.Now); saved for future logging function.
 
-                        cmd.Parameters.AddWithValue("@DateofExpire", MedEDdatePicker.Value);
-                        cmd.Parameters.AddWithValue("@Referral", getTrueValForSQL(prescriptionHCPTB.Text));
-                        cmd.Parameters.AddWithValue("@Comments", getTrueValForSQL(instructionsTB.Text));
-                        cmd.Parameters.AddWithValue("@DateEntered", DateTime.Now);
-                        cmd.Parameters.AddWithValue("@NextOfKinID", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@NextOfKinRelationshipToPatient", DBNull.Value);
                         cmd.Prepare();
                         cmd.ExecuteNonQuery();
-
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("First Name, Last Name, and Phone Number are required fields.");
+                        MessageBox.Show("Medication name is required.");
                         return;
                     }
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("DB error " + ex.Message);
                 }
+
             }
         }
 

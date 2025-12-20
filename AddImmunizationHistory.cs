@@ -14,7 +14,7 @@ namespace Student2
     public partial class AddImmunizationHistory : Form
     {
         int currentPatIDtoEdit = -1;
-        public AddImmunizationHistory(Form f, int patientID)
+        public AddImmunizationHistory(int patientID)
         {
             InitializeComponent();
             currentPatIDtoEdit = patientID;
@@ -46,6 +46,12 @@ namespace Student2
             }
         }
 
+        private bool isNumber(string valueIn)
+        {
+            int numberOut;
+            return int.TryParse(valueIn, out numberOut);
+        }
+
         private void saveBut_Click(object sender, EventArgs e)
         {
             string connString = "server=localhost;uid=root;pwd=toor;database=its245";
@@ -57,30 +63,29 @@ namespace Student2
                     conn.Open();
                     cmd.Connection = conn;
 
-                    cmd.CommandText = @"INSERT INTO immunizationshistorytable(PatientID, Vaccine, ImmunizationDate, ExperationDate, Delivery, Comments, HCPId)" + " VALUES(" + currentPatIDtoEdit + ", @Vaccine, @ImmunizationDate, @ExperationDate, @Delivery, @Comments, @HCPId)";
+                    cmd.CommandText = "INSERT INTO immunizationshistorytable(PatientID, Vaccine, ImmunizationDate, ExperationDate, Delivery, Comments, HCPId)" + " VALUES(" + currentPatIDtoEdit + ", @Vaccine, @ImmunizationDate, @ExperationDate, @Delivery, @Comments, @HCPId)";
                     if (!string.IsNullOrEmpty(vaccineTB.Text) &&
-                        currentPatIDtoEdit != -1)
+                        currentPatIDtoEdit != -1 &&
+                        isNumber(HCPidTB.Text))
                     {
                         cmd.Parameters.AddWithValue("@Vaccine", getTrueValForSQL(vaccineTB.Text));
                         cmd.Parameters.AddWithValue("@ImmunizationDate", IMMdatepicker.Value);
-                        cmd.Parameters.AddWithValue("@ExperationDate", IMMdatepicker.Value);
+                        cmd.Parameters.AddWithValue("@ExperationDate", EXPdatePicker.Value);
                         cmd.Parameters.AddWithValue("@Delivery", getTrueValForSQL(deliveryTB.Text));
-                        cmd.Parameters.AddWithValue("@Comments", getTrueValForSQL(deliveryTB.Text));
-                        cmd.Parameters.AddWithValue("@HCPId", getTrueValForSQL(deliveryTB.Text));
+                        cmd.Parameters.AddWithValue("@Comments", getTrueValForSQL(commentsTB.Text));
+                        cmd.Parameters.AddWithValue("@HCPId", getTrueValForSQL(HCPidTB.Text));
 
-                        cmd.Parameters.AddWithValue("@DateEntered", DateTime.Now);
+                        //cmd.Parameters.AddWithValue("@DateEntered", DateTime.Now); saved for future logging function.
                         
                         cmd.Prepare();
                         cmd.ExecuteNonQuery();
-
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("First Name, Last Name, and Phone Number are required fields.");
+                        MessageBox.Show("Vaccine name is required, and HCP ID cannot be non-numeric.");
                         return;
                     }
-
                 }
                 catch (Exception ex)
                 {
