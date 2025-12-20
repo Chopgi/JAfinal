@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.nameAgeLabel = new System.Windows.Forms.Label();
-            this.deleteButGMH = new System.Windows.Forms.Button();
-            this.undoButGMH = new System.Windows.Forms.Button();
-            this.modifyButGMH = new System.Windows.Forms.Button();
-            this.saveButGMH = new System.Windows.Forms.Button();
             this.visitPDbut = new System.Windows.Forms.Button();
             this.listBoxSP = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -48,46 +44,6 @@
             this.nameAgeLabel.Size = new System.Drawing.Size(289, 29);
             this.nameAgeLabel.TabIndex = 19;
             this.nameAgeLabel.Text = "PatientFname, Lname, Age";
-            // 
-            // deleteButGMH
-            // 
-            this.deleteButGMH.Location = new System.Drawing.Point(530, 420);
-            this.deleteButGMH.Margin = new System.Windows.Forms.Padding(2);
-            this.deleteButGMH.Name = "deleteButGMH";
-            this.deleteButGMH.Size = new System.Drawing.Size(56, 19);
-            this.deleteButGMH.TabIndex = 24;
-            this.deleteButGMH.Text = "Delete";
-            this.deleteButGMH.UseVisualStyleBackColor = true;
-            // 
-            // undoButGMH
-            // 
-            this.undoButGMH.Location = new System.Drawing.Point(451, 420);
-            this.undoButGMH.Margin = new System.Windows.Forms.Padding(2);
-            this.undoButGMH.Name = "undoButGMH";
-            this.undoButGMH.Size = new System.Drawing.Size(56, 19);
-            this.undoButGMH.TabIndex = 23;
-            this.undoButGMH.Text = "Undo";
-            this.undoButGMH.UseVisualStyleBackColor = true;
-            // 
-            // modifyButGMH
-            // 
-            this.modifyButGMH.Location = new System.Drawing.Point(294, 420);
-            this.modifyButGMH.Margin = new System.Windows.Forms.Padding(2);
-            this.modifyButGMH.Name = "modifyButGMH";
-            this.modifyButGMH.Size = new System.Drawing.Size(56, 19);
-            this.modifyButGMH.TabIndex = 22;
-            this.modifyButGMH.Text = "Modify";
-            this.modifyButGMH.UseVisualStyleBackColor = true;
-            // 
-            // saveButGMH
-            // 
-            this.saveButGMH.Location = new System.Drawing.Point(373, 420);
-            this.saveButGMH.Margin = new System.Windows.Forms.Padding(2);
-            this.saveButGMH.Name = "saveButGMH";
-            this.saveButGMH.Size = new System.Drawing.Size(56, 19);
-            this.saveButGMH.TabIndex = 20;
-            this.saveButGMH.Text = "Save";
-            this.saveButGMH.UseVisualStyleBackColor = true;
             // 
             // visitPDbut
             // 
@@ -116,10 +72,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.listBoxSP);
             this.Controls.Add(this.visitPDbut);
-            this.Controls.Add(this.deleteButGMH);
-            this.Controls.Add(this.undoButGMH);
-            this.Controls.Add(this.modifyButGMH);
-            this.Controls.Add(this.saveButGMH);
             this.Controls.Add(this.nameAgeLabel);
             this.Name = "SelectPatient";
             this.Text = "SelectPatient";
@@ -131,10 +83,6 @@
 
         #endregion
         private System.Windows.Forms.Label nameAgeLabel;
-        private System.Windows.Forms.Button deleteButGMH;
-        private System.Windows.Forms.Button undoButGMH;
-        private System.Windows.Forms.Button modifyButGMH;
-        private System.Windows.Forms.Button saveButGMH;
         private System.Windows.Forms.Button visitPDbut;
         private System.Windows.Forms.ListBox listBoxSP;
     }

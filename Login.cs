@@ -13,7 +13,6 @@ namespace Student2
 {
     public partial class Login : Form
     {
-
         public Login()
         {
             InitializeComponent();
@@ -28,7 +27,6 @@ namespace Student2
             usernameTB.TabIndex = 0;
             passwordTB.TabIndex = 1;
             loginBut.TabIndex = 2;
-            
             this.AcceptButton = loginBut;
         }
 
