@@ -148,6 +148,7 @@
     <Compile Include="SelectPatient.Designer.cs">
       <DependentUpon>SelectPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="SharedMethods.cs" />
     <EmbeddedResource Include="AddImmunizationHistory.resx">
       <DependentUpon>AddImmunizationHistory.cs</DependentUpon>
     </EmbeddedResource>
