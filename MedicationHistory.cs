@@ -77,16 +77,15 @@ namespace Student2
         {
             SharedMethods.CurrentPatientID = (int)selectPatientCB.SelectedValue;
             SharedMethods.RefreshNameLabel(nameAgeLabel);
-            MedicationHistory_Load(sender,  e);
+            refreshDataGrid();
         }
 
         private void addButMH_Click(object sender, EventArgs e)
         {
-            Form AddMedicationHistory = new AddMedicationHistory(SharedMethods.CurrentPatientID);
+            Form AddMedicationHistory = new AddMedicationHistory();
             AddMedicationHistory.Owner = this;
             AddMedicationHistory.ShowDialog();
             refreshDataGrid();
-            SharedMethods.PopulateCB(selectPatientCB);
         }
     }
 }

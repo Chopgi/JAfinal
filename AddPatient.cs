@@ -91,6 +91,8 @@ namespace Student2
                         cmd.Prepare();
                         cmd.ExecuteNonQuery();
 
+                        cmd.CommandText = "SELECT LAST_INSERT_ID()";
+                        SharedMethods.CurrentPatientID = Convert.ToInt32(cmd.ExecuteScalar());
                         this.Close();
                     }
                     else

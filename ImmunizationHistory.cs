@@ -78,12 +78,12 @@ namespace Student2
         {
             SharedMethods.CurrentPatientID = (int)selectPatientCB.SelectedValue;
             SharedMethods.RefreshNameLabel(nameAgeLabel);
-            ImmunizationHistory_Load(sender, e);
+            refreshListBox();
         }
 
         private void addButMH_Click(object sender, EventArgs e)
         {
-            Form AddImmunizationHistory = new AddImmunizationHistory(SharedMethods.CurrentPatientID);
+            Form AddImmunizationHistory = new AddImmunizationHistory();
             AddImmunizationHistory.Owner = this;
             AddImmunizationHistory.ShowDialog();
             refreshListBox();

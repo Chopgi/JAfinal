@@ -65,7 +65,6 @@ namespace Student2
             else
             {
                 MessageBox.Show("Please input both a username and password.");
-
             }
         }
     }

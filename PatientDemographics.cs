@@ -87,6 +87,7 @@ namespace Student2
             AddPatient.ShowDialog();
             refreshDataGrid();
             SharedMethods.PopulateCB(selectPatientCB);
+            SharedMethods.RefreshNameLabel(nameAgeLabel);
         }
     }
 }

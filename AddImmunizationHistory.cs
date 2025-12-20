@@ -13,12 +13,6 @@ namespace Student2
 {
     public partial class AddImmunizationHistory : Form
     {
-        int currentPatIDtoEdit = -1;
-        public AddImmunizationHistory(int patientID)
-        {
-            InitializeComponent();
-            currentPatIDtoEdit = patientID;
-        }
         public AddImmunizationHistory()
         {
             InitializeComponent();
@@ -63,9 +57,9 @@ namespace Student2
                     conn.Open();
                     cmd.Connection = conn;
 
-                    cmd.CommandText = "INSERT INTO immunizationshistorytable(PatientID, Vaccine, ImmunizationDate, ExperationDate, Delivery, Comments, HCPId)" + " VALUES(" + currentPatIDtoEdit + ", @Vaccine, @ImmunizationDate, @ExperationDate, @Delivery, @Comments, @HCPId)";
+                    cmd.CommandText = "INSERT INTO immunizationshistorytable(PatientID, Vaccine, ImmunizationDate, ExperationDate, Delivery, Comments, HCPId)" + " VALUES(" + SharedMethods.CurrentPatientID + ", @Vaccine, @ImmunizationDate, @ExperationDate, @Delivery, @Comments, @HCPId)";
                     if (!string.IsNullOrEmpty(vaccineTB.Text) &&
-                        currentPatIDtoEdit != -1 &&
+                        SharedMethods.CurrentPatientID != -1 &&
                         isNumber(HCPidTB.Text))
                     {
                         cmd.Parameters.AddWithValue("@Vaccine", getTrueValForSQL(vaccineTB.Text));

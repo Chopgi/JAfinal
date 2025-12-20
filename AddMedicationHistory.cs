@@ -13,12 +13,6 @@ namespace Student2
 {
     public partial class AddMedicationHistory : Form
     {
-        int currentPatIDtoEdit = -1;
-        public AddMedicationHistory(int patientID)
-        {
-            InitializeComponent();
-            currentPatIDtoEdit = patientID;
-        }
         public AddMedicationHistory()
         {
             InitializeComponent();
@@ -57,9 +51,9 @@ namespace Student2
                     conn.Open();
                     cmd.Connection = conn;
 
-                    cmd.CommandText = "INSERT INTO patientmedications(PatientID, Medication, MedicationAmt, MedicationUnit, Instructions, MedicationStartDate, MedicationEndDate, PrescriptionHCP)" + " VALUES(" + currentPatIDtoEdit + ", @Medication, @MedicationAmt, @MedicationUnit, @Instructions, @MedicationStartDate, @MedicationEndDate, @PrescriptionHCP)";
+                    cmd.CommandText = "INSERT INTO patientmedications(PatientID, Medication, MedicationAmt, MedicationUnit, Instructions, MedicationStartDate, MedicationEndDate, PrescriptionHCP)" + " VALUES(" + SharedMethods.CurrentPatientID + ", @Medication, @MedicationAmt, @MedicationUnit, @Instructions, @MedicationStartDate, @MedicationEndDate, @PrescriptionHCP)";
                     if (!string.IsNullOrEmpty(medicationTB.Text) &&
-                        currentPatIDtoEdit != -1)
+                        SharedMethods.CurrentPatientID != -1)
                     {
                         cmd.Parameters.AddWithValue("@Medication", getTrueValForSQL(medicationTB.Text));
                         cmd.Parameters.AddWithValue("@MedicationAmt", getTrueValForSQL(medAmtTB.Text));
