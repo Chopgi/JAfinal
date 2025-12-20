@@ -22,11 +22,7 @@ namespace Student2
         private void Login_Load(object sender, EventArgs e)
         {
             BackColor = Color.FromArgb(185, 209, 234);
-            
             loginBut.Cursor = Cursors.Hand;
-            usernameTB.TabIndex = 0;
-            passwordTB.TabIndex = 1;
-            loginBut.TabIndex = 2;
             this.AcceptButton = loginBut;
         }
 

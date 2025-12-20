@@ -13,25 +13,23 @@ namespace Student2
 {
     public partial class GenMedicalHistory : Form
     {
-        int currentPatIDtoPass = -1;
         public GenMedicalHistory()
         {
             InitializeComponent();
             this.FormClosed += (s, args) => Application.Exit();
         }
 
-        public GenMedicalHistory(Form f, int patientID)
+        public GenMedicalHistory(Form f)
         {
             InitializeComponent();
             f.Dispose();
             this.FormClosed += (s, args) => Application.Exit();
-            currentPatIDtoPass = patientID;
-
-            refreshNameLabel();
         }
 
         private void GenMedicalHistory_Load(object sender, EventArgs e)
         {
+            SharedMethods.RefreshNameLabel(nameAgeLabel);
+            SharedMethods.PopulateCB(selectPatientCB);
             BackColor = Color.FromArgb(185, 209, 234);
             string connString = "server=localhost;uid=root;pwd=toor;database=its245";
             using (var conn = new MySqlConnection(connString))
@@ -41,62 +39,9 @@ namespace Student2
                     MySqlCommand cmd = conn.CreateCommand();
                     conn.Open();
                     DataTable dt = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM generalmedicalhistory WHERE PatientID = " + currentPatIDtoPass, conn);
+                    MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM generalmedicalhistory WHERE deleted NOT IN (1) AND PatientID = " + SharedMethods.CurrentPatientID, conn);
                     da.Fill(dt);
                     dataGridViewGMH.DataSource = dt;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("DB error " + ex.Message);
-                }
-            }
-            populateCB();
-        }
-
-        public void populateCB()
-        {
-            string connString = "server=localhost;uid=root;pwd=toor;database=its245";
-            using (var conn = new MySqlConnection(connString))
-            {
-                try
-                {
-                    MySqlCommand cmd = conn.CreateCommand();
-                    conn.Open();
-                    DataTable dt = new DataTable();
-                    DataSet ds = new DataSet();
-                    MySqlDataAdapter da = new MySqlDataAdapter("SELECT PatientID, PtFirstName, PtLastName, PtHomePhone " + "FROM patientdemographics " + "WHERE deleted NOT IN (1)", conn);
-                    da.Fill(ds, "patientDataset");
-
-                    dt = ds.Tables["patientDataset"];
-                    dt.Columns.Add("FullPatInfo", typeof(string), "PtLastName + ', ' + PtFirstName + ' (' + PtHomePhone + ')'");
-                    selectPatientCB.DisplayMember = "FullPatInfo";
-                    selectPatientCB.ValueMember = "PatientID";
-                    selectPatientCB.DataSource = ds.Tables["patientDataset"];
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("DB error " + ex.Message);
-                }
-            }
-            selectPatientCB.SelectedValue = currentPatIDtoPass;
-        }
-
-        public void refreshNameLabel()
-        {
-            string connString = "server=localhost;uid=root;pwd=toor;database=its245";
-            using (var conn = new MySqlConnection(connString))
-            {
-                try
-                {
-                    MySqlCommand cmd = conn.CreateCommand();
-                    conn.Open();
-                    cmd.CommandText = "SELECT PtFirstName, PtLastName " + "FROM patientdemographics " + "WHERE PatientID = " + currentPatIDtoPass;
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        nameAgeLabel.Text = reader.GetString(0) + " " + reader.GetString(1);
-                    }
-                    reader.Close();
                 }
                 catch (Exception ex)
                 {
@@ -107,33 +52,25 @@ namespace Student2
 
         private void visitMHbut_Click(object sender, EventArgs e)
         {
-            Form MedicationHistory = new MedicationHistory(this, currentPatIDtoPass);
+            Form MedicationHistory = new MedicationHistory(this);
             MedicationHistory.Show();
-        }
-
-        private void visitLOGINbut_Click(object sender, EventArgs e)
-        {
-            Form Login = new Login();
-            Login.Show();
-            this.Hide();
         }
 
         private void visitPDbut_Click(object sender, EventArgs e)
         {
-            Form PatientDemographics = new PatientDemographics(this, currentPatIDtoPass);
+            Form PatientDemographics = new PatientDemographics(this);
             PatientDemographics.Show();
         }
 
         private void visitIHbut_Click(object sender, EventArgs e)
         {
-            Form ImmunizationHistory = new ImmunizationHistory(this, currentPatIDtoPass);
+            Form ImmunizationHistory = new ImmunizationHistory(this);
             ImmunizationHistory.Show();
         }
 
         private void selectPatientCB_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            currentPatIDtoPass = (int)selectPatientCB.SelectedValue;
-            refreshNameLabel();
+            SharedMethods.CurrentPatientID = (int)selectPatientCB.SelectedValue;
             GenMedicalHistory_Load(sender, e);
         }
     }

@@ -39,21 +39,9 @@ namespace Student2
         private void visitPDbut_Click(object sender, EventArgs e)
         {
             this.Hide();
-            if (currentPatIDtoPass != -1)
-            {
-                Form PatientDemographics = new PatientDemographics(this, currentPatIDtoPass);
-                PatientDemographics.Show();
-            }
-            else
-            {
-                Form PatientDemographics = new PatientDemographics();
-                PatientDemographics.Show();
-                this.Dispose();
-
-            }
+            Form PatientDemographics = new PatientDemographics(this);
+            PatientDemographics.Show();
         }
-
-        private int currentPatIDtoPass = -1; //default if no patient is selected
 
         private void SelectPatient_Load(object sender, EventArgs e)
         {
@@ -99,30 +87,8 @@ namespace Student2
         private void listBoxSP_SelectedIndexChanged(object sender, EventArgs e)
         {
             var currentPatID = listBoxSP.SelectedItem as patientItem;
-            currentPatIDtoPass = currentPatID.PatientID;
-
-
-
-            string connString = "server=localhost;uid=root;pwd=toor;database=its245";
-            using (var conn = new MySqlConnection(connString))
-            {
-                try
-                {
-                    MySqlCommand cmd = conn.CreateCommand();
-                    conn.Open(); //Opening connection to database
-                    cmd.CommandText = "SELECT PtFirstName, PtLastName " + "FROM patientdemographics " + "WHERE PatientID = "+ currentPatID.PatientID;
-                    MySqlDataReader reader = cmd.ExecuteReader(); //Helps me read the command that we executed
-                    while (reader.Read())
-                    {
-                        nameAgeLabel.Text = reader.GetString(0) + " " + reader.GetString(1);
-                    }
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("DB error " + ex.Message);
-                }
-            }
+            SharedMethods.CurrentPatientID = currentPatID.PatientID;
+            SharedMethods.RefreshNameLabel(nameAgeLabel);
         }
     }
 }
