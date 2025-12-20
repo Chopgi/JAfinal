@@ -57,15 +57,16 @@
             // dataGridViewPD
             // 
             this.dataGridViewPD.AllowUserToAddRows = false;
+            this.dataGridViewPD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPD.Location = new System.Drawing.Point(197, 126);
+            this.dataGridViewPD.Location = new System.Drawing.Point(39, 126);
             this.dataGridViewPD.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPD.Name = "dataGridViewPD";
             this.dataGridViewPD.RowHeadersVisible = false;
             this.dataGridViewPD.RowHeadersWidth = 51;
             this.dataGridViewPD.RowTemplate.Height = 24;
             this.dataGridViewPD.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dataGridViewPD.Size = new System.Drawing.Size(406, 202);
+            this.dataGridViewPD.Size = new System.Drawing.Size(659, 202);
             this.dataGridViewPD.TabIndex = 25;
             // 
             // visitMHbut

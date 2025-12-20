@@ -44,7 +44,7 @@
             // 
             // deleteButMH
             // 
-            this.deleteButMH.Location = new System.Drawing.Point(430, 337);
+            this.deleteButMH.Location = new System.Drawing.Point(538, 404);
             this.deleteButMH.Margin = new System.Windows.Forms.Padding(2);
             this.deleteButMH.Name = "deleteButMH";
             this.deleteButMH.Size = new System.Drawing.Size(56, 19);
@@ -54,7 +54,7 @@
             // 
             // undoButMH
             // 
-            this.undoButMH.Location = new System.Drawing.Point(351, 337);
+            this.undoButMH.Location = new System.Drawing.Point(459, 404);
             this.undoButMH.Margin = new System.Windows.Forms.Padding(2);
             this.undoButMH.Name = "undoButMH";
             this.undoButMH.Size = new System.Drawing.Size(56, 19);
@@ -64,7 +64,7 @@
             // 
             // modifyButMH
             // 
-            this.modifyButMH.Location = new System.Drawing.Point(194, 337);
+            this.modifyButMH.Location = new System.Drawing.Point(302, 404);
             this.modifyButMH.Margin = new System.Windows.Forms.Padding(2);
             this.modifyButMH.Name = "modifyButMH";
             this.modifyButMH.Size = new System.Drawing.Size(56, 19);
@@ -74,7 +74,7 @@
             // 
             // addButMH
             // 
-            this.addButMH.Location = new System.Drawing.Point(114, 337);
+            this.addButMH.Location = new System.Drawing.Point(222, 404);
             this.addButMH.Margin = new System.Windows.Forms.Padding(2);
             this.addButMH.Name = "addButMH";
             this.addButMH.Size = new System.Drawing.Size(56, 19);
@@ -85,7 +85,7 @@
             // 
             // saveButMH
             // 
-            this.saveButMH.Location = new System.Drawing.Point(272, 337);
+            this.saveButMH.Location = new System.Drawing.Point(380, 404);
             this.saveButMH.Margin = new System.Windows.Forms.Padding(2);
             this.saveButMH.Name = "saveButMH";
             this.saveButMH.Size = new System.Drawing.Size(56, 19);
@@ -95,7 +95,7 @@
             // 
             // visitGMHbut
             // 
-            this.visitGMHbut.Location = new System.Drawing.Point(520, 158);
+            this.visitGMHbut.Location = new System.Drawing.Point(735, 192);
             this.visitGMHbut.Margin = new System.Windows.Forms.Padding(2);
             this.visitGMHbut.Name = "visitGMHbut";
             this.visitGMHbut.Size = new System.Drawing.Size(71, 50);
@@ -119,16 +119,17 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(88, 91);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 123);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(398, 139);
+            this.dataGridView1.Size = new System.Drawing.Size(683, 188);
             this.dataGridView1.TabIndex = 17;
             // 
             // visitPDbut
             // 
-            this.visitPDbut.Location = new System.Drawing.Point(520, 104);
+            this.visitPDbut.Location = new System.Drawing.Point(735, 138);
             this.visitPDbut.Margin = new System.Windows.Forms.Padding(2);
             this.visitPDbut.Name = "visitPDbut";
             this.visitPDbut.Size = new System.Drawing.Size(71, 50);
@@ -139,7 +140,7 @@
             // 
             // visitIHbut
             // 
-            this.visitIHbut.Location = new System.Drawing.Point(520, 212);
+            this.visitIHbut.Location = new System.Drawing.Point(735, 246);
             this.visitIHbut.Margin = new System.Windows.Forms.Padding(2);
             this.visitIHbut.Name = "visitIHbut";
             this.visitIHbut.Size = new System.Drawing.Size(71, 50);
@@ -162,7 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(817, 434);
             this.Controls.Add(this.selectPatientCB);
             this.Controls.Add(this.visitIHbut);
             this.Controls.Add(this.visitPDbut);
@@ -176,6 +177,7 @@
             this.Controls.Add(this.saveButMH);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MedicationHistory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MedHistory";
             this.Load += new System.EventHandler(this.MedicationHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

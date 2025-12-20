@@ -56,11 +56,17 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(146, 122);
+            this.dataGridView1.Location = new System.Drawing.Point(82, 122);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(508, 175);
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(615, 221);
             this.dataGridView1.TabIndex = 26;
             // 
             // nameAgeLabel
@@ -95,6 +101,7 @@
             this.deleteButMH.TabIndex = 23;
             this.deleteButMH.Text = "Delete";
             this.deleteButMH.UseVisualStyleBackColor = true;
+            this.deleteButMH.Click += new System.EventHandler(this.deleteButMH_Click);
             // 
             // undoButMH
             // 
@@ -175,6 +182,7 @@
             this.Controls.Add(this.addButMH);
             this.Controls.Add(this.saveButMH);
             this.Name = "ImmunizationHistory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ImmunizationHistory";
             this.Load += new System.EventHandler(this.ImmunizationHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

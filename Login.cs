@@ -45,6 +45,7 @@ namespace Student2
                             string DBpass = reader.GetString(1);
                             if (usernameTB.Text == DBuser && passwordTB.Text == DBpass)
                             {
+                                SharedMethods.CurrentUser = DBuser;
                                 Form SelectPatient = new SelectPatient();
                                 SelectPatient.Show();
                                 this.Hide();

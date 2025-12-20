@@ -12,6 +12,7 @@ namespace Student2
     internal static class SharedMethods
     {
         public static int CurrentPatientID = -1; //default if no patient is selected
+        public static string CurrentUser; //Stored for use in log
         public static void RefreshNameLabel(Label labelToUpdate)
         {
             string connString = "server=localhost;uid=root;pwd=toor;database=its245";

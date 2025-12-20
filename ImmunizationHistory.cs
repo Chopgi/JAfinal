@@ -88,5 +88,10 @@ namespace Student2
             AddImmunizationHistory.ShowDialog();
             refreshListBox();
         }
+
+        private void deleteButMH_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
